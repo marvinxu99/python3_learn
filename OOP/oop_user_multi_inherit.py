@@ -7,7 +7,7 @@ class User:
 
 
 class Wizard(User):
-    def __init__(self, name, power, email=""):
+    def __init__(self, name, power=60, email=""):
         super().__init__(email)
         self.name = name
         self.power = power
@@ -18,7 +18,7 @@ class Wizard(User):
 
 
 class Archer(User):
-    def __init__(self, name, num_arrows, email=""):
+    def __init__(self, name, num_arrows=50, email=""):
         super().__init__(email)
         self.name = name
         self.num_arrows = num_arrows
@@ -27,16 +27,20 @@ class Archer(User):
         self.num_arrows -= 1
         print(f'attacking with arrows: arrrows left - {self.num_arrows}')
 
+    def run(self):
+        print('run really fast')
+
+class HybridBorg(Wizard, Archer):
+    def __init__(self, name, power, arrows):
+        Wizard.__init__(self, name, power)
+        Archer.__init__(self, name, arrows)
+
 
 wizard1 = Wizard("Mann", 95, "mann@gmail.com")
 archer1 = Archer("Pointy", 35)
 
-wizard1.attack()
-archer1.attack()
+hb1 = HybridBorg("Hybrid1", 89, 35)
+print(hb1.run())
 
-print(wizard1.email)
-print(archer1.email)
-
-# print(isinstance(wizard1, Wizard))
-# print(isinstance(wizard1, User))
-# print(isinstance(wizard1, object))
+#MRO - Method Resolution Order
+print(HybridBorg.mro())

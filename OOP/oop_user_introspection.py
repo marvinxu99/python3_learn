@@ -31,12 +31,5 @@ class Archer(User):
 wizard1 = Wizard("Mann", 95, "mann@gmail.com")
 archer1 = Archer("Pointy", 35)
 
-wizard1.attack()
-archer1.attack()
-
-print(wizard1.email)
-print(archer1.email)
-
-# print(isinstance(wizard1, Wizard))
-# print(isinstance(wizard1, User))
-# print(isinstance(wizard1, object))
+# Object introspection
+print(dir(wizard1))
