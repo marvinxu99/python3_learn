@@ -33,6 +33,16 @@ simple_dict = {
     'b': 2
 }
 
-my_dict = {key: value**2 for key, value in simple_dict.items()}
+#my_dict = {key:value**2 for key, value in simple_dict.items()}
+my_dict1 = {k:v**2 for k,v in simple_dict.items() if v%2==0}
+print(my_dict1)
 
-print(my_dict)
+my_dict2 = {num:num*2 for num in [1,2,3]}
+print(my_dict2)
+
+# find the duplicates
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+
+duplicates = list(set([char for char in some_list if some_list.count(char) > 1]))
+
+print(duplicates)
