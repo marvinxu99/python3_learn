@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd4c65ff-3c3d-441f-8eba-ace958688c2b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/builtinmodule2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/shopping_cart.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +37,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Marvin\my-learning\python3\pycharm_projects\py_modules" />
       <recent name="C:\Users\Marvin\my-learning\python3\pycharm_projects\py_modules\venv" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="py_modules" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -55,7 +54,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Marvin\my-learning\python3\pycharm_projects\py_modules\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -76,7 +75,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Marvin\my-learning\python3\pycharm_projects\py_modules\venv\main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Marvin\my-learning\python3\pycharm_projects\py_modules\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -87,8 +86,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -118,26 +117,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="613" y="1080" key="CommitChangelistDialog2" timestamp="1576367990050">
+      <screen x="303" y="1080" width="1366" height="728" />
+    </state>
+    <state x="613" y="1080" key="CommitChangelistDialog2/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576367990050" />
     <state x="765" y="1185" key="FileChooserDialogImpl" timestamp="1576090060608">
       <screen x="303" y="1080" width="1366" height="728" />
     </state>
     <state x="765" y="1185" key="FileChooserDialogImpl/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576090060608" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1576097985196">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1576367677591">
       <screen x="303" y="1080" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576097985196" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1576097985195">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576367677591" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1576367677590">
       <screen x="303" y="1080" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576097985195" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1576097985195">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576367677590" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1576367677590">
       <screen x="303" y="1080" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576097985195" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1576097985195">
+    <state width="1345" height="179" key="GridCell.Tab.0.left/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576367677590" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1576367677590">
       <screen x="303" y="1080" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576097985195" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right/303.1080.1366.728/0.0.1920.1040@303.1080.1366.728" timestamp="1576367677590" />
     <state width="1345" height="166" key="GridCell.Tab.1.bottom" timestamp="1576089893002">
       <screen x="303" y="1080" width="1366" height="728" />
     </state>
