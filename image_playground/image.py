@@ -1,11 +1,10 @@
 from PIL import Image, ImageFilter
 
 img = Image.open('./Pokedex/pikachu.jpg')
-
 print(img)
-print(img.format)
-print(img.size)
-print(img.mode)
+# print(img.format)
+# print(img.size)
+# print(img.mode)
 
 print(dir(img))
 
@@ -31,10 +30,19 @@ resized.save('resized.png', 'png')
 
 img2 = Image.open('./resized.png')
 print(img2)
-print(img2.format)
-print(img2.size)
-print(img2.mode)
+# print(img2.format)
+# print(img2.size)
+# print(img2.mode)
 
 box = (100, 100, 400, 400)
 region = filtered_img.crop(box)
 region.save('cropped.png', 'png')
+
+img3 = Image.open('./astro.jpg')
+print(img3)
+# thumbnail = img3.resize((400, 400))
+# thumbnail.save('thumbnail.png', 'png')
+img3.thumbnail((400, 400))  # thumbnail will keep the aspect ratio
+img3.save('thumbnail2.png', 'png')
+
+
