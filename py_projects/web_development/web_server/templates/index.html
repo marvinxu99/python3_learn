@@ -9,6 +9,14 @@
 
 <body>
   I AM A WEB MASTER
+  sum: {{ 4 + 5 }}
+
+  {% if name %}
+  <h1>Hello {{ name[0]|upper }}{{ name[1:] }}!</h1>
+  {% else %}
+  <h1>Hello, World!</h1>
+  {% endif %}
+
   <script src='static/script.js'></script>
 </body>
 

@@ -3,3 +3,23 @@ Installation:
 
 # Quick Start
 https://flask.palletsprojects.com/en/1.1.x/quickstart/
+
+
+Windows cmd:
+scripts\activate.bat
+set FLASK_APP=server.py
+set FLASK_ENV=development
+# python -m flask run
+flask run
+
+
+Powershell:
+scripts\activate.ps1
+$env: FLASK_APP = "hello.py"
+$env: FLASK_ENV = "development"
+flask run
+
+MIME Types:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+type/subtype
+type/subtype;parameter=value         e.g., text/plain;charset=UTF-8
