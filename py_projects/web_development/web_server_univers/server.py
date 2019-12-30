@@ -1,3 +1,5 @@
+# server.py
+from datetime import datetime
 from flask import Flask, render_template, escape, request, redirect
 
 app = Flask(__name__)
@@ -32,17 +34,31 @@ def html_page(page_name):
     return render_template(page_name)
 
 
+def append_msg_to_file(data):
+    with open('database.txt', mode='a') as database:
+        dt_now = datetime.now()
+        database.write(
+            f'\n\nTIME:{dt_now.strftime("%d-%b-%Y, %H:%M:%S")}')
+
+        email = data['email']
+        subject = data['subject']
+        message = data['message']
+        database.write(
+            f'\nEMAIL: {email} \nSUBJECT: {subject} \nMESSAGE: {message}')
+
+
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
         data = request.form.to_dict()
-        print(data)
+        # print(data)
         if data['email'] and data['subject'] and data['message']:
+            append_msg_to_file(data)
             return redirect('/thankyou.html')
         else:
             return redirect('/contact.html')
     else:
-        return 'somethig went wrong :('
+        return 'somethig went wrong...'
 
 
 @app.route('/blog')
