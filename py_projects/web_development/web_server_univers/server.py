@@ -1,6 +1,7 @@
 # server.py
 from datetime import datetime
 from flask import Flask, render_template, escape, request, redirect
+import csv
 
 app = Flask(__name__)
 
@@ -34,11 +35,10 @@ def html_page(page_name):
     return render_template(page_name)
 
 
-def append_msg_to_file(data):
+def append_to_txt_file(data):
     with open('database.txt', mode='a') as database:
         dt_now = datetime.now()
-        database.write(
-            f'\n\nTIME:{dt_now.strftime("%d-%b-%Y, %H:%M:%S")}')
+        database.write(f'\n\nTIME:{dt_now.strftime("%d-%b-%Y, %H:%M:%S")}')
 
         email = data['email']
         subject = data['subject']
@@ -47,18 +47,32 @@ def append_msg_to_file(data):
             f'\nEMAIL: {email} \nSUBJECT: {subject} \nMESSAGE: {message}')
 
 
+def append_to_csv_file(data):
+    with open('database.csv', mode='a', newline='') as database2:
+        time_str = datetime.now().strftime("%d-%b-%Y %H:%M:%S")
+        email = data['email']
+        subject = data['subject']
+        message = data['message']
+        csv_writer = csv.writer(
+            database2, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        csv_writer.writerow((time_str, email, subject, message))
+
+
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
-        data = request.form.to_dict()
-        # print(data)
-        if data['email'] and data['subject'] and data['message']:
-            append_msg_to_file(data)
-            return redirect('/thankyou.html')
-        else:
-            return redirect('/contact.html')
+        try:
+            data = request.form.to_dict()
+            if data['email'] and data['subject'] and data['message']:
+                append_to_txt_file(data)
+                append_to_csv_file(data)
+                return redirect('/thankyou.html')
+            else:
+                return redirect('/contact.html')
+        except:
+            return 'did not save to database.'
     else:
-        return 'somethig went wrong...'
+        return 'somethig went wrong, try again!'
 
 
 @app.route('/blog')
