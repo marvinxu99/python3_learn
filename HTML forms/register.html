@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Register</title>
+</head>
+
+<body>
+	<form method='POST'>
+		First Name: <input type='text' name='firstname' placeholder='your first name'> <br>
+		Last Name: <input type='text' name='lastname'> <br>
+		
+		Email: <input type='email' name='email' required placeholder='your email'> <br>
+		
+		Password: <input type='password' name='password' minlength='5'><br>
+		Password: <input type="password" name='password1' pattern=".{8,}"   required title="8 characters minimum"><br>
+		Password: <input type="password" name='password2' pattern=".{8,12}" required title="8 to 12 characters"><br>
+		
+		Birthday: <input type='date' name='birthday'> <br>
+		
+		Gender: <br> 
+		<input type='radio' name='gender' value='male'>Male<br>
+		<input type='radio' name='gender' value='female'>Female<br>
+		<input type='radio' name='gender' value='other'>Other<br>
+		
+		Pets: <br>
+		<input type='checkbox' name='cat'>Cat<br>
+		<input type='checkbox' name='dog'>Dog<br>
+		<input type='checkbox' name='horse'>Horse<br>
+		
+		Cars: <br>
+		<select multiple name='cars'>
+			<option value='volvo' name='cars'>Volvo</option>
+			<option value='audi'>Audi</option>
+			<option value='audi'>Cameo</option>
+		</select> <br>
+		
+		<input type='submit' value='Register!'>
+		<input type='reset'>	
+	</form>
+
+</body>
+
+
+</html>
