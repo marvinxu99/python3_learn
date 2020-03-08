@@ -29,4 +29,5 @@ if 'HOMEDRIVE' in env_var:
 else:
 	print("'HOMEDRIVE' is not included in os.environ")
 	
-
+# os.getlogin()
+print('Hello, ' + os.getlogin() + '! How are you?')
