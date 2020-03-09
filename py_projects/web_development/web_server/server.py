@@ -15,7 +15,7 @@ def blog_f():
 
 @app.route('/blog/2020/dog')
 def blog_f2():
-    return '<h1>this is dog!</h1>'
+    return '<h1>this is a dog!</h1>'
 
 
 @app.route('/about.html')
