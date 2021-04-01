@@ -10,7 +10,10 @@ with open("interp_audit_1.csv", newline='') as f:
 meows_output = []
 for data in meows_data:
     text = ''.join(x for x in data)
-    data.append(str(text.count("Red")))
+    red_count = text.count("Red")
+    data.append(str(red_count))
+    data.append("TRUE" if red_count == int(data[8]) else "FALSE")
+
     meows_output.append(data)
 
 with open('meows_output.csv', 'w+', newline='') as f_csv:
