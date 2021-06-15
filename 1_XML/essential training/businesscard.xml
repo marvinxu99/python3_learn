@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="businesscard.css" ?>
+<BusinessCards>
+    <BusinessCard>
+        <name>Marvin Xu</name>
+        <phone type="home" primary="primary">604-123-4444</phone>
+        <phone type="work">778-123-4444</phone>
+        <phone type="mobile">1-800-123444</phone>
+        <email>test@test.com</email>
+    </BusinessCard>
+
+    <BusinessCard>
+        <name>Winter Xu</name>
+        <phone type="home">604-123-4444</phone>
+        <phone type="work" primary="primary">778-123-4444</phone>
+        <phone type="mobile">1-800-123444</phone>
+        <email>test@test.com</email>
+    </BusinessCard>
+</BusinessCards>

@@ -39,7 +39,17 @@ Advantage of XML
 Disadvantage of XML:
 - XML is not suitable for very large data sets  (data sets >= MB)
 
+Basics Rules of XML:
+- contents of XML files
+- Proper XML syntax
+- XML validation
+- XML namespaces
 
+***************************
+contents of XML files
 
+- Proper XML syntax
+- XML validation
+- XML namespaces
 
 ''''
