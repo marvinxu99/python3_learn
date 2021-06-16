@@ -51,6 +51,17 @@ Declaring Attributes in DTD:
  - Enumerated: can be one of the a list of values
  - Tokenized: used for IDs, other advanced DTD features
 <!ATTLIST PACKAGE status CDATA "OK>
+<!ATTLIST DWELLING type (house|appartment|trailer)>
+
+Default Attributes
+#REQUIRED: attribute must be present
+#IMPLIED: attribute is optional
+default value: value to be used for default
+#FIXED: value is fixed at a certain value
+<!ATTLIST PACKAGE ontime (yes|no) #REQUIRED>
+<!ATTLIST PACKAGE ontime (yes|no) #IMPLIED>
+<!ATTLIST PACKAGE ontime CDATA #FIXED "yes">
+
 
 
 
