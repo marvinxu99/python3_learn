@@ -24,8 +24,13 @@ function initialize(idTheTable,idXMLData)
 	// ***Set up the event listener on each checkbox***
 	var checkboxes = document.querySelectorAll("[type=checkbox]")
 	for (var i=0; i < checkboxes.length; i++) {
-		checkboxes[i].addEventListener('change', function () {
+		checkboxes[i].addEventListener('change', function (event) {
 			document.forms[0].txtBillAmt.value = calculateBill('menuTable');
+			// if (event.currentTarget.checked) {
+			// 	alert("checked")
+			// } else {
+			// 	alert("not checked")
+			// }
 		})
 	}
 }
