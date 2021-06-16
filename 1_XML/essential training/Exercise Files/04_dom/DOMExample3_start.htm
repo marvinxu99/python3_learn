@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Card DOM Example 3</title>
+    <script type="text/javascript">
+    function createBizCards()
+    {
+        // get references to the data island and the array of business cards
+		var xmlData = document.getElementById("xmldata1");
+		var bizCards = xmlData.getElementsByTagName("BusinessCard");
+		
+    }
+    
+    window.addEventListener("load",createBizCards);
+    </script>
+    <link rel="stylesheet" href="businesscard.css" />
+</head>
+<body>
+<xml id="xmldata1" style="display:none">
+<BusinessCards>
+	<BusinessCard>
+		<Name>Joe Marini</Name>
+		<email>joe@joe.com</email>
+		<phone type="mobile">(415) 555-4567</phone>
+		<phone type="work">(800) 555-9876</phone>
+		<phone type="fax">(510) 555-1234</phone>
+	</BusinessCard>
+</BusinessCards>	
+</xml>
+</body>
+</html>

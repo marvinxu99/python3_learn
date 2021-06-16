@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Card DOM Exmaple2</title>
+    
+    <link rel="stylesheet" href="businesscard2.css">
+
+    <script type="text/javascript">
+
+        function createBizCards() {
+            // get reference to the data island and the array of business card
+            var xmlData = document.getElementById("xmldata1");
+            var bizCards = xmlData.getElementsByTagName('BusinessCard');
+            
+            for(var i = 0; i < bizCards.length; i++) {
+
+                var currentCard = bizCards[i];
+                var newCard = document.createElement("div");
+                newCard.setAttribute("class", "BusinessCard");
+
+                var newName = document.createElement("div");
+                newName.setAttribute("class", "Name");
+                var nameStr = document.createTextNode(currentCard.getElementsByTagName("name")[0].firstChild.data)
+                newName.appendChild(nameStr)
+                newCard.appendChild(newName);
+
+                var newEmail = document.createElement("div");
+                newEmail.setAttribute("class", "email");
+                var emailStr = document.createTextNode(currentCard.getElementsByTagName("email")[0].firstChild.data)
+                newEmail.appendChild(emailStr)
+                newCard.appendChild(newEmail);
+
+                var phones = currentCard.getElementsByTagName('phone');
+                var newPhone;
+                for(var j = 0; j < phones.length; j++) {
+                    newPhone = document.createElement("div");
+                    newPhone.setAttribute("class", "phone");
+
+                    var labelStr = currentCard.getElementsByTagName('phone')[j].getAttribute("type");
+                    var phoneStr = document.createTextNode(labelStr + 
+                        currentCard.getElementsByTagName('phone')[j].firstChild.data);
+                    newPhone.appendChild(phoneStr);
+                    newCard.appendChild(newPhone);
+                }
+
+                document.getElementsByTagName("body")[0].appendChild(newCard);
+            }
+        }
+
+        window.addEventListener("load", createBizCards);
+        
+    </script>
+    </head>
+<body>
+<xml id="xmldata1" style="display:none">
+<BusinessCards>
+    <BusinessCard>
+        <name>Marvin Xu</name>
+        <phone type="home" primary="primary">604-123-4444</phone>
+        <phone type="work">778-123-4444</phone>
+        <phone type="mobile">1-800-123444</phone>
+        <email>test@test.com</email>
+    </BusinessCard>
+    <BusinessCard>
+        <name>Winter Xu</name>
+        <phone type="home" primary="primary">604-123-4444</phone>
+        <phone type="work">778-123-4444</phone>
+        <phone type="mobile">1-800-123444</phone>
+        <email>test@test.com</email>
+    </BusinessCard>
+</BusinessCards>
+</xml>
+
+</body>
+</html>
