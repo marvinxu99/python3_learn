@@ -1,0 +1,57 @@
+Document Type Definitions
+- peovide way to constrain document content
+- specify what kind of content (e.g.,tags) can appear and where
+- Can be included in XML file, or be external to document
+- Relatively simple to write, but not powerful. (Schema is more powerful)
+
+DTD Syntax and Content:
+- Markup declarations that define document content
+- DTD can specify the following:
+   * elements
+   * attributes
+   * entities
+   * notations
+   * process instructions
+   * parameters entity references
+
+DTD format:
+<!DOCTYPE Name [
+    Document Type Definition
+]>
+
+Delcariing Elements in DTD:
+===========================
+<!ELEMENT Name ContentSpecification>
+- EMPTY content - element has no child elements
+- ANY content - element has no content constraints
+- Element content - can contain specified elements
+- Mixed content - can contain elements and character declarations
+
+<!ELEMENT MISCELLANEOUS ANY>
+<!ELEMENT IMG EMPTY>
+<!ELEMENT NAME (#PCDATA)>       ; parse character data
+<!ELEMENT CD (TITLE, ARTIST)>   ; 
+<!ELEMENT DWELLING (HOUSE|APARTMENT|TRAILER)>
+<!ELEMENT TITLE (#PCDATA|SUBTITLE)>
+
+Specifying element population limits:
+- ? means zero or one of the element
+- + means one or more of the element
+- * means zero or more of the element
+<!ELEMENT LETTER (A?, B*, C+)>
+
+Declaring Attributes in DTD:
+===========================
+- All attributes must be declared
+- Format:
+   * <!ATTLIST ELementName AttrName Type DefaultDecl>
+
+ Attribute Types:
+ - String: indicated by CDATA
+ - Enumerated: can be one of the a list of values
+ - Tokenized: used for IDs, other advanced DTD features
+<!ATTLIST PACKAGE status CDATA "OK>
+
+
+
+
