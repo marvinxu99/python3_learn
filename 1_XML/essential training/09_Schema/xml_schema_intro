@@ -1,0 +1,49 @@
+XML Schema:
+===========
+- Alternative way of specifying rules to DTDs
+- Provide way to constrain XML document content
+- Written using XML syntax
+- Similar to DTAs, but more powerful and sophisticated
+    * Finer level of control that DTAs allow
+    * Schema and XML files always stored separately
+
+Anatomy of a Schema:
+====================
+- Uses namespace http://www/w3.org/2001/XMLSchema
+- Usually uses the "xsd" prefix
+
+<xsd:schema xmlns:xsd="http://www/w3.org/2001/XMLSchema">
+    <xsd:element name="ELemName">
+        <!-- other content definitions go in here -->
+    </xsd:element>
+</xsd:schema>
+
+Declaring Elements in Schema:
+=============================
+- Declared using <xsd:element> tag
+- Can be declared as either simple or complex type
+- Elements cab have mixed or empty element content
+- Element can have min and max times they can occur
+- Elements can be restricted to having certain values
+
+Simple SChema Types:
+====================
+xsd:string
+xsd:boolean
+xsd:decimal
+xsd:integer
+xsd:postiveInteger
+xsd:negativeInteger
+xsd:anyURI
+xsd:date
+xsd:time
+xsd:dateTime
+
+
+
+
+
+
+
+
+

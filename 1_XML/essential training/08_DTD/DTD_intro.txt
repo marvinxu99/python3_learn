@@ -29,7 +29,7 @@ Delcariing Elements in DTD:
 
 <!ELEMENT MISCELLANEOUS ANY>
 <!ELEMENT IMG EMPTY>
-<!ELEMENT NAME (#PCDATA)>       ; parse character data
+<!ELEMENT NAME (#PCDATA)>       ; parsed character data
 <!ELEMENT CD (TITLE, ARTIST)>   ; 
 <!ELEMENT DWELLING (HOUSE|APARTMENT|TRAILER)>
 <!ELEMENT TITLE (#PCDATA|SUBTITLE)>

@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE BusinessCard [
-]>
+<!DOCTYPE BusinessCard SYSTEM "businesscard.dtd">
 <BusinessCard>
 	<Name>Joe Marini</Name>
 	<phone type="mobile">(415) 555-4567</phone>
