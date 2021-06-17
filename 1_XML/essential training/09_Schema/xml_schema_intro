@@ -39,7 +39,32 @@ xsd:date
 xsd:time
 xsd:dateTime
 
+Declaring Elements in Schema:
+=============================
+<xsd:element name="MyElement" type="xsd:string">
+<xsd:eLement name="HireDate" type="xsd:date">
+<xsd:element name="Friends" type="xsd:string" minoccurs="1" maxoccures="unbounded">
+<xsd:element name="Phone" type="xsd:string" maxoccures="5">
 
+Can declare custom types, derived from existing types.
+<xsd:element name="InvitedGuests">
+    <xsd:simpleType>
+        <xsd:restriction base="xsd:postiveInteger:>
+            <xsd:minInclusive value="0">
+            <xsd:maxInclusive value="50">
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:element>
+            <xsd:minExclusive value="0">
+            <xsd:maxExclusive value="50">
+
+Can restrict content to a range of choices
+<xsd:element name="dwelling">
+    <xsd:simpleType>
+
+
+    </xsd:simpleType
+</xsd:element>    
 
 
 
