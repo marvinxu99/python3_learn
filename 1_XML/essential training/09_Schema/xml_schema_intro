@@ -61,14 +61,76 @@ Can declare custom types, derived from existing types.
 Can restrict content to a range of choices
 <xsd:element name="dwelling">
     <xsd:simpleType>
-
-
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="house"/>
+            <xsd:enumeration value="apartment"/>
+            <xsd:enumeration value="trailer"/>
+        </xsd:restriction>
     </xsd:simpleType
 </xsd:element>    
 
+restriction can even use regular expression patterns:
+<xsd:element name="SSN">
+    <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{3}-\d{2}-\d{4}"/>
+        </xsd:restriction>
+    </xsd:simpleType
+</xsd:element>    
 
+Decalring Comples Types:
+========================
+two ways:
+- Use the xsd:anyType value for the type attribute - no restriction on the content
 
+- Use the <xsd:complexType> tag in the definition
 
+<xsd:element name="EmptyElem">
+    <xsd:complexType>
+    </xsd:complexType>
+</xsd:element>
 
+Declaring elements with mixed content:
+<xsd:element name="title">
+    <xsd:complexType mixed="true">
+        <xsd:sequence>
+            <xsd:element name="subtitle"/>
+        <xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
 
+Declaring elements with element content:
+<xsd:element name="address">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="num" type="xsd:integer"/>
+            <xsd:element name="street" type="xsd:string"/>
+            <xsd:element name="city" type="xsd:string"/>
+            <xsd:element name="state" type="xsd:string"/>
+        <xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+Declaring elements with element content (choice):
+<xsd:element name="vehicle">
+    <xsd:complexType>
+        <xsd:choice>
+            <xsd:element name="car" type="xsd:string"/>
+            <xsd:element name="bus" type="xsd:string"/>
+            <xsd:element name="van" type="xsd:string"/>
+            <xsd:element name="truck" type="xsd:string"/>
+        <xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+xsd:all - means elements can appear in any order.
+<xsd:element name="CapitalCity">
+    <xsd:complexType>
+        <xsd:all>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="state" type="xsd:string"/>
+            <xsd:element name="pop" type="xsd:positiveInteger"/>
+        <xsd:all>
+    </xsd:complexType>
+</xsd:element>
 
