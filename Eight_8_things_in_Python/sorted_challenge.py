@@ -24,7 +24,9 @@ def sorting_key(data):
 def get_sorted():
     """Return the country list so that it is sorted first by population 
     and then alphabetically by country name.""" 
-    return sorted(country_list, key=sorting_key)
+    # return sorted(country_list, key=sorting_key)
+    return sorted(country_list, key=lambda x: (int(x.population[:-3]), x.name.lower()))
+
 
 if __name__ == "__main__":
     print(*get_sorted(), sep='\n')
