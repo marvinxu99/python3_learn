@@ -19,9 +19,10 @@ def get_scrabble_dictionary():
 def score_word(word):
     """Return the score for a word using letter_scores.
     If the word isn't in DICTIONARY, it gets a score of 0."""
+    dictionary = set(get_scrabble_dictionary())  # set is more efficient than list
     word_score = 0 
-    if word.upper() in get_scrabble_dictionary():
-       word_score = reduce(lambda x, y: x + letter_scores[y], word.lower(), 0)
+    if word.upper() in dictionary:
+       word_score = reduce(lambda sum, char: sum + letter_scores.get(char, 0), word.lower(), 0)
     return word_score
 
 def remove_punctuation(word):
@@ -31,18 +32,18 @@ def remove_punctuation(word):
 
 def get_word_largest_score(sentence):
     """Given a sentence, return the word in the sentence with the largest score."""
-    words_in_sentence = sentence.split()
-    words_cleaned = list(map(remove_punctuation, words_in_sentence))
-    word_largest_score = max(words_cleaned, key=score_word)
-    return word_largest_score
+    # words_in_sentence = sentence.split()
+    # words_cleaned = list(map(remove_punctuation, words_in_sentence))
+    # word_largest_score = max(words_cleaned, key=score_word)
+    # return word_largest_score
+    return(max((remove_punctuation(word) for word in sentence.split()), key=score_word))
 
 if __name__ == "__main__":
     
-    words_in_dict = get_scrabble_dictionary()
-
     while(True):
-        inp_word = input("Enter a word, or enter CRL+C to exit: ")
+        inp_str = input("Enter a word or sentence, or enter CRL+C to exit: ")
+        inp_word = get_word_largest_score(inp_str)
         print("You entered: " + inp_word)
-        print(score_word(inp_word))
+        print(f"score is { score_word(inp_word) }")
 
     # print(get_word_largest_score("Beautiful is better than ugly."))
