@@ -7,11 +7,9 @@ def remove_punctuation(words):
 def is_palindrome(words):
     '''Palindromes are case insensitive, so both radar and Radar are valid'''
     cl_words = remove_punctuation(words).lower()
-    return (cl_words == "".join(reversed(cl_words)))
-    
+    return (cl_words == "".join(reversed(cl_words)))   
     # return (cl_words == cl_words[::-1])
 
 if __name__ == "__main__":
     print(f"radar is palindrome: { is_palindrome('radar')}")
     print(is_palindrome('radar'))
-    print(reversed("radar"))
