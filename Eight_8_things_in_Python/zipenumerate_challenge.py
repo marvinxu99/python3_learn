@@ -15,7 +15,7 @@ def annual_births_average(years=years, births=births):
 
    return results
 
-
+# using * to unpack
 print(*annual_births_average(years, births), sep='\n')
 '''
 (2010, 723165, 723165)
