@@ -12,3 +12,15 @@ myfunc(*tuple_vec)
 myfunc(*dict_vec)  # print out keys
 
 myfunc(**dict_vec)  # print out values
+
+# example.
+def multi_add(*args):
+    result = 0
+    for x in args:
+        result += x
+    return result
+
+multi_add(1, 2, 3)
+'''
+6
+'''
