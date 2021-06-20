@@ -15,7 +15,7 @@ def main():
 
   
   # close the file when done
-
+  f.close()
   
   # Open the file back up and read the contents
 
