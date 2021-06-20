@@ -4,10 +4,12 @@
 
 def main():  
   # Open a file for writing and create it if it doesn't exist
+  f = open("textfile.txt", "w+")
 
   
   # Open the file for appending text to the end
-
+  for i in range(10):
+    f.write("This is line " + str(i) + "\r\n")
 
   # write some lines of data to the file
 
