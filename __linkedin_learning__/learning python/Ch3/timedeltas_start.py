@@ -44,4 +44,4 @@ print("It is just ", days_to_afd.days, "until April Fools Day.")
 # Print out tomrrow's day of the week;
 today=date.today()
 days=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
-print("Tomorrow will be "+days[(today.weekday()+1)%7])
+print("Tomorrow will be "+days[(today.weekday() + 1) % 7])
