@@ -8,5 +8,8 @@ def main():
 
 def message():
     print('This is python version {}'.format(platform.python_version()))
+    print('line 2')
+print('line 3')
+
 
 if __name__ == '__main__': main()
