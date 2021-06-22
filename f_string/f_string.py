@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-# Copyright 2009-2017 BHG http://bw.org/
-
-'''
-& And
-| OR
-^ XOR
-<<  Shift left
->>  Shift rigt
-'''
-
 x = 0x0a
 y = 0x02
 z = x & y
