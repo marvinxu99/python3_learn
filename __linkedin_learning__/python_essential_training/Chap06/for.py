@@ -11,3 +11,4 @@ for x in [1, 2, 3]:
     print(x)
 else:
     print('this executes due to no break')
+# An else statement after a loop will only execute if the loop exits normally.
