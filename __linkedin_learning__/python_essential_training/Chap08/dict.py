@@ -14,7 +14,9 @@ def main():
     print_dict(animals2)
 
 def print_dict(o):
-    for x in o: print(f'{x}: {o[x]}')
+    # for x in o: print(f'{x}: {o[x]}')
+    for k,v in o.items(): 
+        print(f'{k}: {v}')
 
 
 if __name__ == '__main__': main()
