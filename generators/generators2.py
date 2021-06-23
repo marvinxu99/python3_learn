@@ -28,3 +28,19 @@ def long_time2():
 
 long_time()
 long_time2()
+
+#########################################
+def generator(start,stop):
+    while (start<=stop):
+        yield start
+        print(f'start={start}')
+        start+=1
+for counter in generator(3,4):
+    print(f'counter={counter}')
+
+'''
+counter=3
+start=3
+counter=4
+start=4
+'''
