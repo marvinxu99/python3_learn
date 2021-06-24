@@ -7,6 +7,7 @@ class Animal:
         self._name = kwargs['name'] if 'name' in kwargs else 'fluffy'
         self._sound = kwargs['sound'] if 'sound' in kwargs else 'meow'
 
+    # setter and getter
     def type(self, t = None):
         if t: self._type = t
         return self._type

@@ -10,7 +10,7 @@ def main():
     t = ( 'one', 'two', None, 'four', 'five' )
     s = set("It's a bird! It's a plane! It's Superman!")
     d = dict( one = r, two = l, three = s )
-    mixed = [ l, r, s, d, t ]
+    mixed = [ l, r, s, d, t, 'A' ]
     disp(mixed)
 
 def disp(o):

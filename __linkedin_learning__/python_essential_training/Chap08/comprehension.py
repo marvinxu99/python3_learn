@@ -16,6 +16,9 @@ def main():
     # create a dictionary:
     seq6 = { x: x**2 for x in seq }
 
+    # Create a set 
+    seq7 = { x for x in "superduper" if x not in 'pd'}
+
     print_list(seq)
     print_list(seq2)
 
@@ -25,6 +28,7 @@ def main():
     print(seq4)
     print(seq5)
     print(seq6)
+    print(seq7)
 
 def print_list(o):
     for x in o: print(x, end = ' ')
