@@ -9,6 +9,12 @@ def main():
                 lion = 'grrr', giraffe = 'I am a giraffe!', 
                 dragon = 'rawr' )
 
+    for k in animals.keys():
+        print(k)
+
+    for v in animals.values():
+        print(v)
+
     print_dict(animals)
     print("--------------")
     print_dict(animals2)

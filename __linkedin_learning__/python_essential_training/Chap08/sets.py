@@ -6,6 +6,13 @@ def main():
     b = set("I'm sorry, Dave. I'm afraid I can't do that.")
     print_set(a)
     print_set(b)
+    print_set(sorted(a))
+    print_set(sorted(b))
+
+    print(a-b)
+    print(a|b)
+    print(a^b)
+    print(a&b)
 
 def print_set(o):
     print('{', end = '')
