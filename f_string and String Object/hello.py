@@ -46,4 +46,11 @@ def main():
     print('Hell, World. big number: {:,}'.format(x))
     print('Hell, World. big number: {:,}'.format(x).replace(',', '.'))
 
+    x = 42
+    print('Hell, World. big number: {:.3f}'.format(x))
+
+    print('Hell, World. big number: {:x}'.format(x))
+    print('Hell, World. big number: {:o}'.format(x))
+    print('Hell, World. big number: {:b}'.format(x))
+
 if __name__ == '__main__': main()
