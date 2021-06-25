@@ -8,3 +8,15 @@ print(f1.readlines())
 
 f1.close()
 
+####
+def main():
+    f = open('lines.txt', "r")
+    print(type(f))
+    print(f'mode is {f.mode}')
+    for line in f:
+        print(line.rstrip())
+
+
+
+if __name__ == "__main__":
+    main()
