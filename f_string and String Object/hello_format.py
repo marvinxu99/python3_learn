@@ -34,10 +34,13 @@ def main():
     s = 'Hell, World. {1} {0} {2}'
     print(s.format((42 * 7), 99, 'test'))
 
+    s = 'Hell, World. {2} {1} {0} {2}'
+    print(s.format((42 * 7), 99, 'test'))
+
     # you can name the variables.
     x = 42
     y = 73
-    print('Hell, World. {xx} {yy}'.format(xx = x, yy = y))
+    print('Hell, World. {xx} {yy} {xx}'.format(xx = x, yy = y))
 
     print('Hell, World. {xx:<5} {yy:5}'.format(xx = x, yy = y))
     print('Hell, World. {xx:<5} {yy:+05}'.format(xx = x, yy = y))
