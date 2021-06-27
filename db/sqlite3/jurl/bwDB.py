@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # bwDB - CRUD library for sqlite 3
 # by Bill Weinman [http://bw.org/]
-# Copyright 2010-2017 The BearHeart Group LLC
+# Copyright 1995-2017 The BearHeart Group LLC
 # 1.2.0 - 2017-09-27 -
 #   lots of cleanup. uses f-strings so requires Python 3.6
 
@@ -17,7 +17,7 @@ class bwDB:
                 table is for CRUD methods 
                 filename is for connecting to the database file
         """
-        # see filename @property decorators below
+        # see filename setter below
         self._filename = kwargs.get('filename')
         self._table = kwargs.get('table', '')
 
@@ -190,6 +190,9 @@ class bwDB:
         self._db.close()
         del self._dbfilename
 
+    def version(self = None):
+        return __version__
+
 
 def test():
     fn = ':memory:'  # in-memory database
@@ -241,35 +244,11 @@ def test():
     print(f'There are {db.countrecs()} rows')
     print('Now delete it')
     db.delete(newid)
-
     print(f'There are {db.countrecs()} rows')
-
-    # Get all rows to display as dict
     for r in db.getrecs():
         print(dict(r))
-    '''
-    {'id': 1, 'string': 'one', 'number': 42}
-    {'id': 2, 'string': 'TWO', 'number': 73}
-    {'id': 3, 'string': 'three', 'number': 123}
-    '''
-
-    # To get all rows to display as a tuple
     for r in db.sql_query(f"select * from {t}"):
-        # print(r)
-        print(tuple(r))
-    '''
-    (1, 'one', 42)
-    (2, 'TWO', 73)
-    (3, 'three', 123)
-    '''
-
-    for r in db.sql_query(f"select * from {t}"):
-        print(list(r))
-    '''
-    [1, 'one', 42]
-    [2, 'TWO', 73]
-    [3, 'three', 123]
-    '''
+        print(r)
     db.close()
 
 
