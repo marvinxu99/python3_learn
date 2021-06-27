@@ -1,0 +1,4 @@
+list - mutable ordered sequence of values
+tuple - fixed sequence of values, immutable
+set - unordered sequence of distinct values
+dictionary - collection of key-value pairs
