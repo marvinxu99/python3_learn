@@ -1,5 +1,5 @@
 # advanced iteration functions in the itertools package
-
+import itertools
 
 def testFunction(x):
     pass
@@ -8,6 +8,12 @@ def testFunction(x):
 def main():
     # TODO: cycle iterator can be used to cycle over a collection
     seq1 = ["Joe", "John", "Mike"]
+    cycle1 = itertools.cycle(seq1)
+    print(next(cycle1))
+    print(next(cycle1))
+    print(next(cycle1))
+    print(next(cycle1))
+    print(next(cycle1))
 
     # TODO: use count to create a simple counter
 

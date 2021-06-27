@@ -26,8 +26,8 @@ def main():
         print(i, m)
 
     # TODO: use zip to combine sequences
-    for i in enumerate(zip(days, daysFr)):
-        print(i)
+    for i, m in enumerate(zip(days, daysFr)):
+        print(i, m[0], '=', m[1], 'in French')
 
 
 if __name__ == "__main__":
