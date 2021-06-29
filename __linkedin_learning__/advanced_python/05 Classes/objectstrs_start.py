@@ -14,11 +14,17 @@ class Person():
 
     # TODO: use __repr__ to create a string useful for debugging
     def __repr__(self) -> str:
-        pass
+        return f"<Person Class - fanme:{self.fname}, lname:{self.lname}, age:{self.age}"
 
     # TODO: use str for a more human-readable string
     def __str__(self) -> str:
-        pass
+        return "Person ({0} {1} is {2})".format(
+            self.fname, self.lname, self.age
+        )
+
+    def __bytes__(self):
+        val = f"Person:{self.fname}:{self.lname}:{self.age}"
+        return(bytes(val.encode('utf-8')))
 
 
 def main():
@@ -29,6 +35,7 @@ def main():
     print(repr(cls1))
     print(str(cls1))
     print("Formatted: {0}".format(cls1))
+    print(bytes(cls1))
 
 
 if __name__ == "__main__":
