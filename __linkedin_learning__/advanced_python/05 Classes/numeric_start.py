@@ -1,4 +1,28 @@
+# Class Numerical Operators
 # give objects number-like behavior
+
+"""
+object.__add__(self, other)    ; self + other
+object.__sub__(self, other)     ; self - other
+object.__mul__(self, other)     ; self * other
+object.__div__(self, other)     ; self / other
+object.__floordiv__(self, other) ; self // other
+object.__pow__(self, other)     ; self ** other
+object.__and__(self, other)     ; self & other
+object.__or__(self, other)      ; self | other
+
+Python also supports inplace operations on objects
+
+object.__iadd__(self, other)    ; self += other
+object.__isub__(self, other)     ; self -= other
+object.__imul__(self, other)     ; self *= other
+object.__idiv__(self, other)     ; self /= other
+object.__ifloordiv__(self, other) ; self //= other
+object.__ipow__(self, other)     ; self **= other
+object.__iand__(self, other)     ; self &= other
+object.__ior__(self, other)      ; self |= other
+
+"""
 
 
 class Point():
@@ -11,7 +35,7 @@ class Point():
 
     # TODO: implement addition
     def __add__(self, other):
-        pass
+        return Point(self.x + other.x, self.y + other.y)
 
     # TODO: implement subtraction
     def __sub__(self, other):
@@ -29,6 +53,8 @@ def main():
     print(p1, p2)
 
     # TODO: Add two points
+    p3 = p1 + p2
+    print(p3)
 
     # TODO: subtract two points
 
