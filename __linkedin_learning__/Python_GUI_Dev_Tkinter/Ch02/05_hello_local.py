@@ -18,6 +18,19 @@ class HelloApp:
         ttk.Button(master, text = "Hawaii",
                    command = self.hawaii_hello).grid(row = 1, column = 1)
 
+        self.label2 = ttk.Label(master, 
+                text='Hello, Tkinter. It has been a while since we last met. Great to see you again!',
+                wraplength=150,
+                justify=CENTER,
+                foreground='blue',
+                background='yellow',
+                font={'Courier', 18, 'bold'}
+            ).grid(row=2, column=0)
+
+        """
+        label.config(foregroud='blue', background='yellow')
+        """
+
     def texas_hello(self):
         self.label.config(text = 'Howdy, Tkinter!')
 
