@@ -18,14 +18,16 @@ class HelloApp:
         ttk.Button(master, text = "Hawaii",
                    command = self.hawaii_hello).grid(row = 1, column = 1)
 
+        ttk.Button(master, text = "Change Text",
+                   command = self.handle_change_text).grid(row = 2, column = 0)
+
         self.label2 = ttk.Label(master, 
                 text='Hello, Tkinter. It has been a while since we last met. Great to see you again!',
                 wraplength=150,
                 justify=CENTER,
-                foreground='blue',
-                background='yellow',
                 font={'Courier', 18, 'bold'}
-            ).grid(row=2, column=0)
+            )
+        self.label2.grid(row=2, column=1)
 
         """
         label.config(foregroud='blue', background='yellow')
@@ -36,6 +38,12 @@ class HelloApp:
 
     def hawaii_hello(self):
         self.label.config(text = 'Aloha, Tkinter!')
+
+    def handle_change_text(self):
+        if self.label2['foreground']: 
+            self.label2.config(foreground='', background='')
+        else:
+            self.label2.config(foreground='blue', background='yellow')
 
             
 def main():            
