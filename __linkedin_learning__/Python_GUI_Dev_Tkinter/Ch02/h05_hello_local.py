@@ -21,17 +21,19 @@ class HelloApp:
         ttk.Button(master, text = "Change Text",
                    command = self.handle_change_text).grid(row = 2, column = 0)
 
+        self.btn3 = ttk.Button(master, text = "Show Image", command = self.handle_image)
+        self.btn3.grid(row = 2, column = 2)
+
         self.label2 = ttk.Label(master, 
                 text='Hello, Tkinter. It has been a while since we last met. Great to see you again!',
                 wraplength=150,
                 justify=CENTER,
-                font={'Courier', 18, 'bold'}
+                font={'Courier', 12, 'bold'}
             )
         self.label2.grid(row=2, column=1)
 
-        """
-        label.config(foregroud='blue', background='yellow')
-        """
+        self.logo = PhotoImage(file='D:/dev/1_django/1_django_pg/1_django_pg_dev_multi/static/img/winter_logo.png')
+
 
     def texas_hello(self):
         self.label.config(text = 'Howdy, Tkinter!')
@@ -40,12 +42,23 @@ class HelloApp:
         self.label.config(text = 'Aloha, Tkinter!')
 
     def handle_change_text(self):
+        """label.config(foregroud='blue', background='yellow')
+        """
         if self.label2['foreground']: 
-            self.label2.config(foreground='', background='')
+            self.label2.config(foreground='',  background='')
         else:
             self.label2.config(foreground='blue', background='yellow')
 
-            
+        # print(self.label2.config())
+
+    def handle_image(self):
+        if self.label2['text']:
+            self.label2.config(image=self.logo, text='')
+            self.btn3.config(text="Show Text")
+        else:
+            self.label2.config(image='', text="Hello again. Hello again again")
+            self.btn3['text'] = 'Show Image'
+
 def main():            
     
     root = Tk()
