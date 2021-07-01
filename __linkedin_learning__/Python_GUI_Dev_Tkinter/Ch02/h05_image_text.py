@@ -24,6 +24,8 @@ class HelloApp:
         self.btn3 = ttk.Button(master, text = "Show Image", command = self.handle_image)
         self.btn3.grid(row = 2, column = 2)
 
+        self.logo = PhotoImage(file='D:/dev/1_django/1_django_pg/1_django_pg_dev_multi/static/img/winter_logo.png')
+
         self.label2 = ttk.Label(master, 
                 text='Hello, Tkinter. It has been a while since we last met. Great to see you again!',
                 wraplength=150,
@@ -31,8 +33,6 @@ class HelloApp:
                 font={'Courier', 12, 'bold'}
             )
         self.label2.grid(row=2, column=1)
-
-        self.logo = PhotoImage(file='D:/dev/1_django/1_django_pg/1_django_pg_dev_multi/static/img/winter_logo.png')
 
 
     def texas_hello(self):
@@ -52,7 +52,8 @@ class HelloApp:
         # print(self.label2.config())
 
     def handle_image(self):
-            self.label2.config(image=self.logo, compound='center')
+        self.label2.config(image=self.logo, compound='center')
+        # self.label2.config(image=self.logo, compound='left')
 
 def main():            
     
