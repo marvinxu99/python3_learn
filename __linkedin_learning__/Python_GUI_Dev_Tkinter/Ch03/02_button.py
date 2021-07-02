@@ -13,12 +13,14 @@ button.pack()
 def callback():
     print('Clicked!')
 
+# command
 button.config(command = callback)
-button.invoke()
+button.invoke()   # this is to simulate the button is clicked
 
-button.state(['disabled'])
+# Widget state
+button.state(['disabled'])    # This is to disable the button
 print(button.instate(['disabled']))
-button.state(['!disabled'])
+button.state(['!disabled'])   # This is to enable the button
 print(button.instate(['!disabled']))
 
 logo = PhotoImage(file = 'python_logo.gif') # change path to image as necessary
