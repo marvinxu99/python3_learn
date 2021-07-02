@@ -20,7 +20,7 @@ text.delete('1.0', '3.0 lineend + 1 chars')
 text.replace('1.0', '1.0 lineend', 'This is the first line.')
 
 text.config(state = 'disabled')
-text.delete('1.0', 'end')
+text.delete('1.0', 'end')       # not doing anything because it was disabled
 text.config(state = 'normal')
 
 text.tag_add('my_tag', '1.0', '1.0 wordend')

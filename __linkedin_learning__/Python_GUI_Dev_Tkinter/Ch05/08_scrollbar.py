@@ -8,8 +8,10 @@ from tkinter import ttk
 root = Tk()
 
 canvas = Canvas(root, scrollregion = (0, 0, 640, 480), bg = 'white')
+
 xscroll = ttk.Scrollbar(root, orient = HORIZONTAL, command = canvas.xview)
 yscroll = ttk.Scrollbar(root, orient = VERTICAL, command = canvas.yview)
+
 canvas.config(xscrollcommand = xscroll.set, yscrollcommand = yscroll.set)
 
 canvas.grid(row = 1, column = 0)
