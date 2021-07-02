@@ -16,7 +16,7 @@ panedwindow.add(frame1, weight = 1)
 panedwindow.add(frame2, weight = 4)
 
 frame3 = ttk.Frame(panedwindow, width = 50, height = 50, relief = SUNKEN)
-panedwindow.insert(1, frame3)
-panedwindow.forget(1)
+panedwindow.insert(1, frame3)   # default weight is 0
+# panedwindow.forget(1)      # still active
 
 root.mainloop()
