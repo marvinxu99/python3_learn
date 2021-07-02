@@ -17,13 +17,13 @@ label.config(foreground = 'blue', background = 'yellow')
 label.config(font = ('Courier', 18, 'bold'))
 label.config(text = 'Howdy, Tkinter!')
 
-logo = PhotoImage(file = 'python_logo.gif') # change path to image as necessary
+logo = PhotoImage(file = 'D:/dev/1_django/1_django_pg/1_django_pg_dev_multi/static/img/winter_logo.png') # change path to image as necessary
 label.config(image = logo)
-label.config(compound = 'text')
-label.config(compound = 'center')
+# label.config(compound = 'text')
+# label.config(compound = 'center')
 label.config(compound = 'left')
 
-label.img = logo
+label.img = logo    # So logo variable will have the same life span as the label.
 label.config(image = label.img)
 
 root.mainloop()

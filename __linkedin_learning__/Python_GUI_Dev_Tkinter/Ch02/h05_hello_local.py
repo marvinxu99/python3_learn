@@ -3,7 +3,7 @@
 # This is an exercise file from Python GUI Development with Tkinter on lynda.com
 
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk    # themed tk module
 
 class HelloApp:
 
