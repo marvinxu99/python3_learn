@@ -20,14 +20,16 @@ yscrollbar.grid(row=0, column=1, sticky='ns')
 text.config(xscrollcommand = xscrollbar.set, yscrollcommand = yscrollbar.set)
 # text.config(yscrollcommand = yscrollbar.set)
 
-# canvas.grid(row = 1, column = 0)
-# xscroll.grid(row = 2, column = 0, sticky = 'ew')
+"""
+X-Scroll       Y-Scroll
+========       ========
+Text           Text
+Canvas         Canvas
+Treeview       Treeview
+Entry
+Spinbox
+Combobox
 
-# def canvas_click(event):
-#     x = canvas.canvasx(event.x)
-#     y = canvas.canvasy(event.y)
-#     canvas.create_oval((x-5, y-5, x+5, y+5), fill = 'green')
-
-# canvas.bind('<1>', canvas_click)
+"""
 
 root.mainloop()
