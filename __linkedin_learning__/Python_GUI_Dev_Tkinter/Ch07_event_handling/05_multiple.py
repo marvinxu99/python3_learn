@@ -13,9 +13,9 @@ label1.pack()
 label2.pack()
 
 label1.bind('<ButtonPress>', lambda e: print('<BP> Label'))
-label1.bind('<1>', lambda e: print('<1> Label'))
+label1.bind('<1>', lambda e: print('<1> Label'))   # Button 1 was pressed
 
-root.bind('<1>', lambda e: print('<1> Root'))
+root.bind('<1>', lambda e: print('<1> Root'))   # Binding to parent will propagate to all children
 
 label1.unbind('<1>')
 label1.unbind('<ButtonPress>')

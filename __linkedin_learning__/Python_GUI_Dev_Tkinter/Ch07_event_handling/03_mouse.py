@@ -23,10 +23,25 @@ def draw(event):
     
 root = Tk()
 
-canvas = Canvas(root, width = 640, height = 480, 
-                background = 'white')
-canvas.pack()
+canvas = Canvas(root, width=640, height=480, background='white')
+# canvas.pack()
+canvas.pack(fill=BOTH, expand=True)
+
 canvas.bind('<ButtonPress>', mouse_press)
 canvas.bind('<B1-Motion>', draw)
 
 root.mainloop()
+
+"""
+Mouse Events: Click-Related
+<Button>, <ButtonPress>   : Any button was pressed
+<BUtton-1>, <ButtonPress-1>  : Button 1 was pressed
+<ButtonRelease-1>  : Button 1 was released
+<Double-Button-1>, <Triple-Button-1)  : Button 1 was double- or triple-clicked.
+
+Mouse Events: Movement-Related
+<Enter>  : Mouse enteed widget area
+<Leave>  : Mouse left widget area.
+<Motion>  : Mourse was moved
+<B1-Motion>  : Mouse was moved with BUtton 1 held down.
+"""
