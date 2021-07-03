@@ -17,3 +17,5 @@ for i in range(1, 50):
 scrollbar = ttk.Scrollbar(root, orient = VERTICAL, command = text.yview)
 scrollbar.grid(row = 0, column = 1, sticky = 'ns')
 text.config(yscrollcommand = scrollbar.set)
+
+root.mainloop()
