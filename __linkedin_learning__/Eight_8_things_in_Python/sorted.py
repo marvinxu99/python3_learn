@@ -9,6 +9,7 @@ class Country:
     def __repr__(self):
         return f'Country({self.name}, {self.population})'
 
+
 country_list = [
                 Country('Taiwan', 24_000_000),
                 Country('Portugal', 10_000_000), 
