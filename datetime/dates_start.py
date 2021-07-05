@@ -29,7 +29,11 @@ def main():
  
   # The following is the same as date.today()
   datetime.date(datetime.now())
-  
+
+  now = datetime.now()
+  print(now.date())
+  print(now.year, now.month, now.day, now.hour, now.minute, now.second)
+  print(now.time())
   
 if __name__ == "__main__":
   main();
