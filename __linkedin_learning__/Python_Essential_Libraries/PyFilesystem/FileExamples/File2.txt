@@ -1,0 +1,2 @@
+This is a sample text file for the Essential Python Libraries course on LinkedIn Learning. 
+It contains some text and will be used during the programming challenge portion of the chapter.

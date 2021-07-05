@@ -1,0 +1,6 @@
+This is a sample text file for the Essential Python Libraries course on LinkedIn Learning.
+
+Somewhere in la Mancha, in a place whose name I do not care to
+remember, a gentleman lived not long ago, one of those who has a lance
+and ancient shield on a shelf and keeps a skinny nag and a greyhound for
+racing. —Miguel de Cervantes, Don Quixote (1605)
