@@ -10,7 +10,7 @@ with open("input.txt") as in_file, open("output.txt", "w") as out_file:
     # Write the transformed content to output.txt
     pass
 
-/* Pyhtonic way of file handling */
+# Pyhtonic way of file handling
 '''
 Path is a class that represents concrete paths to physical files in your computer. 
 Calling .open() on a Path object that points to a physical file opens it just like 
