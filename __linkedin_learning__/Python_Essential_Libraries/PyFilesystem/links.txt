@@ -1,4 +1,4 @@
-PyFilesystem module
+PyFilesystem:
 Pythom filesystem abstract layer
 
 https://pypi.org/project/fs/
