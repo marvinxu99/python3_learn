@@ -1,6 +1,7 @@
 # Python Essential Libraries by Joe Marini course example
 # Example file for the Requests library
 import requests
+from requests.auth import HTTPDigestAuth
 
 # define user and password values
 user = "theuser"
@@ -13,3 +14,8 @@ print(resp.status_code)
 print(resp.text)
 
 # TODO: use the digest authentication method
+url = "https://httpbin.org/digest-auth/auth/theuser/thepass"
+resp = requests.get(url, auth=HTTPDigestAuth(user, passwd))
+print(resp.status_code)
+print(resp.headers)
+print(resp.text)

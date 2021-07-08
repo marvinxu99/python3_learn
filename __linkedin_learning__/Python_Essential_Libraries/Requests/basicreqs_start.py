@@ -24,3 +24,8 @@ heads = {'my-custom-header': 'This is a custom header'}
 resp = requests.get("http://httpbin.org/get", headers=heads)
 print(resp.status_code)
 print(resp.text)
+
+
+resp = requests.get("http://www.winnpysoft.com", headers=heads)
+print(resp.status_code)
+print(resp.text)

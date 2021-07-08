@@ -6,7 +6,7 @@ import requests
 # resp = requests.get("http://httpbin.org/status/404")
 resp = requests.get("http://httpbin.org/status/200")
 print(resp.status_code)
-resp.raise_for_status()    # will raise for 404 
+resp.raise_for_status()    # will raise for error if any
 
 # TODO: examine response encoding
 # resp = requests.get("http://httpbin.org/html")
