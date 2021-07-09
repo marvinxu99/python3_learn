@@ -24,7 +24,7 @@ class Book:
 
 
 # TODO: Create some book instances
-b1 = Book("Title 1")
-b2 = Book("Title 2")
+b1 = Book("Brave New World")
+b2 = Book("War and Peace")
 
 # TODO: Use the static method to access a singleton object
