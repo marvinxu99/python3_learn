@@ -7,6 +7,7 @@ import os
 
 # define a thumbnail size
 thumbsize = (128, 128)
+num_img = 0
 
 images = glob.glob("ImagesArchive/*.*")
 for image in images:
@@ -16,3 +17,5 @@ for image in images:
         with Image.open(image) as imgfile:
             imgfile.thumbnail(thumbsize)
             imgfile.save("ImagesArchive/" + filename + ".thumb" + ext)
+        num_img += 1
+print(f"{num_img} images processed.")
