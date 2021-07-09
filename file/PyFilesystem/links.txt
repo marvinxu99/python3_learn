@@ -4,3 +4,7 @@ Pythom filesystem abstract layer
 https://pypi.org/project/fs/
 
 pip install fs
+
+
+PyFilesystem is greater than or equal to Pathlib:
+https://www.willmcgugan.com/blog/tech/post/pyfilesystem-vs-pathlib/
