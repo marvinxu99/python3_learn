@@ -16,7 +16,7 @@ with OSFS("ImagesArchive") as myfs:
         myfs.remove(path)
 
 # process each image file
-with OSFS("ImagesArchive") as myfs:
+with OSFS("ImagesArchive") as myfs:  
     # TODO: use the files walker to process files
     for path in myfs.walk.files(filter=["*.gif", '*.jpeg', '*.png']):
         filename, ext = fs.path.splitext(path) 

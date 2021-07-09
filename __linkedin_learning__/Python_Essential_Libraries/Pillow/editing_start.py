@@ -20,3 +20,5 @@ with Image.open(infile) as img:
     location = (20, img.height - textsize[1])
     draw.text(location, textstr, (255, 255, 255), font=textfont)
     img.show()
+
+    

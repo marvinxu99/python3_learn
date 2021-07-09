@@ -18,4 +18,5 @@ for image in images:
             imgfile.thumbnail(thumbsize)
             imgfile.save("ImagesArchive/" + filename + ".thumb" + ext)
         num_img += 1
+        
 print(f"{num_img} images processed.")
