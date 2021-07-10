@@ -15,11 +15,11 @@ class Book:
         self.chapters.append((chapter))
 
     def getbookpagecount(self):
-        result = 0
-        for ch in self.chapters:
-            result += ch.pagecount
-        return result
-
+        # result = 0
+        # for ch in self.chapters:
+        #     result += ch.pagecount
+        # return result
+        return sum([ch.pagecount for ch in self.chapters])
 
 class Author:
     def __init__(self, fname, lname) -> None:
@@ -47,3 +47,6 @@ b1.addchapter(Chapter("Chapter 3", 143))
 print(b1.title)
 print(b1.getbookpagecount())
 print(b1.author)
+
+b2 = Book("Midnight Rose", 25.0, Author("Wesley", "Winter"))
+print(b2.getbookpagecount())
