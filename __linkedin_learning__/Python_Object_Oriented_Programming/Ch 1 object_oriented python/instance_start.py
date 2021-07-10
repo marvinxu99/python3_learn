@@ -15,7 +15,7 @@ class Book:
 
     # TODO: create instance methods
     def getprice(self):
-        if hasattr(self, "_discount"):
+        if hasattr(self, "_discount") and self._discount:
             return self.price * (1 - self._discount)
         else:
             return self.price
@@ -38,5 +38,5 @@ print(b2.getprice())
 
 # TODO: properties with double underscores are hidden by the interpreter
 # It is often used to prevent subclass from overriding the attribute
-print(b2.__secret)
-# print(b2._Book__secret)  # this will still print
+# print(b2.__secret)
+print(b2._Book__secret)  # this will still print
