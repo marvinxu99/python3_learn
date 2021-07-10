@@ -1,6 +1,6 @@
 # Python Object Oriented Programming by Joe Marini course example
 # Using the __str__ and __repr__ magic methods
-
+from typing import Any
 
 class Book:
     def __init__(self, title, author, price):
@@ -13,9 +13,15 @@ class Book:
         return f"{self.title} by {self.author}, costs {self.price}"
 
     # TODO: the __call__ method can be used to call the object like a function
-
+    # def __call__(self, *args: Any, **kwds: Any) -> Any:
+    def __call__(self, title, author, price) -> Any:
+        self.title = title
+        self.author = author
+        self.price = price
 
 b1 = Book("War and Peace", "Leo Tolstoy", 39.95)
 b2 = Book("The Catcher in the Rye", "JD Salinger", 29.95)
 
 # TODO: call the object as if it were a function
+b1("War and Peace", "Leo Tolstoy", 40.95)
+print(b1)
