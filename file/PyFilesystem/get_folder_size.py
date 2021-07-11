@@ -19,15 +19,19 @@ Usage:
 ByteSize(6239397620)
 """
 ################################################
-from genericpath import isdir
+from fs.osfs import OSFS
+from fs import open_fs 
 from pathlib import Path
-import os
 
 
 def get_folder_size(folder):
     # using pathlib.Path
-    return ByteSize(sum(file.stat().st_size for file in Path(folder).rglob('*')))
+    # return ByteSize(sum(file.stat().st_size for file in Path(folder).rglob('*')))
     
+    # Using PyFilesystem
+    folder_size = sum(info.size for _, info in open_fs(folder).walk.info(namespaces=['details']))
+    return ByteSize(folder_size)
+
 
 class ByteSize(int):
 
@@ -84,20 +88,16 @@ class ByteSize(int):
 
 if __name__ == "__main__":
 
-    path_to_walk = Path("D:\\dev\\4_python3_learn\\file")
-    # path_to_walk = Path("D:\\dev\\4_python3_learn"}
+    path_to_walk = "D:\\dev\\4_python3_learn\\file"
+    # path_to_walk = "D:\\dev\\4_python3_learn"
 
     size = get_folder_size(path_to_walk)
     print(size, path_to_walk)
 
-    # Using pathlib.Path to walk
-    print('---using pathlib.Path ------')
-    for path in path_to_walk.iterdir():
-        if path.is_dir():
-            print(get_folder_size(path), path)
-
-    # Using o.scandirs to walk through the dirs
-    print('---using os.scandirs()------')
-    for f in os.scandir(path_to_walk):
-        if f.is_dir():
-            print(get_folder_size(f.path), f.path)
+    # create a basic file walker
+    with OSFS(path_to_walk) as myfs:
+        print("-- Directories --")
+        # TODO: use the dirs walker for directories
+        for path in myfs.walk.dirs(max_depth=1, exclude_dirs=['.git', '.vscode', '.pytest_cache']):
+            cur_dir = path_to_walk + '\\' + path[1:]
+            print(get_folder_size(cur_dir), path)
