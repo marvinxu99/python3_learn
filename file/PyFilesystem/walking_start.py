@@ -17,12 +17,14 @@ with OSFS(".") as myfs:
     for path in myfs.walk.dirs():
         print(path)
 
+
 # TODO: use the info property to step through items
 print("-- info --")
 with OSFS(".") as myfs:
     for path, info in myfs.walk.info(namespaces=['details']):
         print(path, info.is_dir, info.size)
-    
+
+
 # Calculat total file size
 with OSFS("FileExamples") as myfs:
     total_size = 0

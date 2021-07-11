@@ -36,6 +36,7 @@ def find_files(filepath):
 
 
 file_hashes = defaultdict(list)
+
 for path in find_files(Path.cwd()):
     file_hash = md5(path.read_bytes()).hexdigest()
     file_hashes[file_hash].append(path)
