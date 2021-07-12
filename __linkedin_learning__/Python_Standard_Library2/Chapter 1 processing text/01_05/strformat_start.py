@@ -1,5 +1,7 @@
 # String formatting methods and best practices
 
+# https://docs.python.org/3.8/tutorial/inputoutput.html#fancier-output-formatting
+
 from string import Template
 import datetime
 

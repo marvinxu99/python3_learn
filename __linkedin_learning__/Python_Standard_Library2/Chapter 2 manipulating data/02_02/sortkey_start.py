@@ -23,7 +23,11 @@ prodList = [
 ]
 
 # TODO: use the key parameter to select a field to sort on
+def prodsort(product):
+    return product.price
+print(sorted(prodList, key=prodsort))
 
+print(sorted(prodList, key=lambda p: p.price))
 
 # TODO: define a lambda function as the sorting key
 
