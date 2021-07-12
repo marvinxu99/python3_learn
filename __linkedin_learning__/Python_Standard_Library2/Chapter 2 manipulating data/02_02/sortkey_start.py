@@ -27,10 +27,9 @@ def prodsort(product):
     return product.price
 print(sorted(prodList, key=prodsort))
 
+# TODO: define a lambda function as the sorting key
 print(sorted(prodList, key=lambda p: p.price))
 
-# TODO: define a lambda function as the sorting key
-
-
 # TODO: the key parameter can also call a method on the object
+print(sorted(prodList, key=lambda p: p.discountPrice()))
 

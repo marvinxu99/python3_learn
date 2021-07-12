@@ -30,9 +30,13 @@ prodList = [
 # itemgetter() retrieves an item at a given index in a collection
 # methodcaller() calls the given method on the object
 print("Using the attrgetter method:")
+print(sorted(prodList, key=attrgetter('weight'), reverse=True))
 
 # print("Using methodcaller to invoke a method:")
+print(sorted(prodList, key=methodcaller("discountPrice")))
 
 # TODO: Use itemgetter to retrieve an index
 inventory = [("Widget A", 5), ("Widget B", 2), ("Widget C", 4),
              ("Widget D", 7), ("Widget E", 4)]
+
+print(sorted(inventory, key=itemgetter(1)))

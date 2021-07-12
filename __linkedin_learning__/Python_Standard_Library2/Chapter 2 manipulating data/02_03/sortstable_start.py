@@ -27,3 +27,5 @@ prodList = [
 print(sorted(prodList, key=lambda p: p.price))
 
 # TODO: sort by two different keys, taking advantage of stability
+result = sorted(prodList, key=lambda p: p.weight)
+print(sorted(result, key=lambda p: p.price, reverse=True))
