@@ -2,6 +2,11 @@
 
 # https://docs.python.org/3.8/tutorial/inputoutput.html#fancier-output-formatting
 
+"""
+string interpolation, also variable substitution or variable interpolation.
+"""
+
+
 from string import Template
 import datetime
 
