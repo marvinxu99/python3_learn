@@ -6,7 +6,7 @@ def print_fib(a, b, c):
 
 print_fib(1, 1, 2)
 
-print_fib(1, 1, 2, 3)
+# print_fib(1, 1, 2, 3)
 
 '''
 Using *args
