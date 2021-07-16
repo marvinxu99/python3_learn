@@ -19,7 +19,7 @@ def timer(func):
         return result
     return wrapper
 
-@lru_cache(maxsize=None)   # No limite to the cache
+@lru_cache(maxsize=None)   # No limit to the cache
 @timer
 def fib(n):
     '''Return the nth value from the Fiboanacci sequence'''

@@ -17,9 +17,9 @@ famous_films = [
 ]
 # cursor.executemany('INSERT INTO Movies VALUES (?,?,?)', famous_films)
 
-records = cursor.execute("SELECT * FROM Movies")
+cursor.execute("SELECT * FROM Movies")
+records = cursor.fetchall()
 print(type(records))
-# print(cursor.fetchall())
 for record in records:
      print(record)
 
