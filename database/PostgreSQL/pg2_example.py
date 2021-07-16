@@ -4,6 +4,7 @@ from decouple import config
 
 def main():
     conn_string = config("CONN_STRING2")
+
     print(conn_string)    
     conn = psycopg2.connect(conn_string)
 
