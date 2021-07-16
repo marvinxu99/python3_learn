@@ -2,18 +2,22 @@ import sqlite3
 
 connection = sqlite3.connect('users.db')
 cursor = connection.cursor()
+
+cursor.execute("DROP TABLE IF EXISTS Users")
+
 cursor.execute('''CREATE TABLE IF NOT EXISTS Users
-        (User_Id INT, First_Name TEXT, Last_Name TEXT, Email TEXT)''')
+        (User_Id INTEGER PRIMARY KEY AUTOINCREMENT, 
+            First_Name TEXT, Last_Name TEXT, Email TEXT)''')
 
 user_list = [
-    (1, 'Quentin', 'Tarantino', 'qt@gamil.com'),
-    (2, 'Steven', 'Spielberg', 'steven@gamil.com'),
-    (3, 'West', 'Anderson', 'west@gail.com')
+    ('Quentin', 'Tarantino', 'qt@gamil.com'),
+    ('Steven', 'Spielberg', 'steven@gamil.com'),
+    ('West', 'Anderson', 'west@gail.com')
 ]
 
-# if len(user_list):
-#     query = 'INSERT INTO Users VALUES (?,?,?,?)'
-#     cursor.executemany(query, user_list)
+if len(user_list):
+    query = 'INSERT INTO Users(First_Name,Last_Name,Email) VALUES(?,?,?)'
+    cursor.executemany(query, user_list)
 
 cursor.execute("SELECT * FROM Users")
 records = cursor.fetchall()

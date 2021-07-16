@@ -2,6 +2,9 @@ import sqlite3
 
 connection = sqlite3.connect('movies.db')
 cursor = connection.cursor()
+
+cursor.execute("DROP TABLE IF EXISTS Movies")
+
 cursor.execute('''CREATE TABLE IF NOT EXISTS Movies
         (Title TEXT, Director TEXT, Year INT)''')
 
@@ -15,7 +18,7 @@ famous_films = [
     ('Back to the Future', 'Steven Spielberg', 1985),
     ('Moonrise Kingdom', 'Wes Anderson', 2012)
 ]
-# cursor.executemany('INSERT INTO Movies VALUES (?,?,?)', famous_films)
+cursor.executemany('INSERT INTO Movies VALUES (?,?,?)', famous_films)
 
 cursor.execute("SELECT * FROM Movies")
 records = cursor.fetchall()
