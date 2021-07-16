@@ -1,8 +1,8 @@
 import psycopg2
-import sys
+from decouple import config
 
 def main():
-    conn_string = "host='localhost' port=5432 dbname='winn_users6' user='winter' password='winter'"
+    conn_string = config("CONN_STRING")
     conn = psycopg2.connect(conn_string)
 
     # Open a cursor
