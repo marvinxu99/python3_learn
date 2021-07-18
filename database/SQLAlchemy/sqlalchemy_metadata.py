@@ -1,6 +1,7 @@
-"""
-SQLAlchemy TUtorial:
+"""SQLAlchemy TUtorial:
 https://docs.sqlalchemy.org/en/14/tutorial/metadata.html
+How to represent database tables, columns, and constraints within 
+SQLAlchemy using the MetaData and related objects
 """
 # The central element of both SQLAlchemy Core and ORM is the 
 # SQL Expression Language which allows for fluent, composable construction0
@@ -134,3 +135,20 @@ generate it.
 #      def __repr__(self):
 #          return f"Address({self.email_address!r})"
 
+"""" Table reflection """
+# Getting a connection - "commit as you go" style
+with engine.connect() as conn:
+    # result = conn.execute(text("select 'Hello World.'"))
+    # print(result.all())
+    conn.execute(text("CREATE TABLE IF NOT EXISTS some_table (x int, y int)"))
+    conn.execute(
+        text("INSERT INTO some_table (x, y) VALUES (:x, :y)"),
+        [{"x": 1, "y": 1}, {"x": 2, "y": 4}]
+    )
+    conn.commit()
+    result = conn.execute(text("select * from some_table"))
+    print(result.all())
+
+print("----- table reflect-------")
+some_table = Table("some_table", metadata, autoload_with=engine)
+print(repr(some_table))
