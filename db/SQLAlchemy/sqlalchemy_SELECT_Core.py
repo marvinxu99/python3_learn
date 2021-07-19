@@ -13,6 +13,7 @@ from sqlalchemy import insert, select, bindparam
 from sqlalchemy import MetaData, Table, Column, Integer, String
 from sqlalchemy import text
 from sqlalchemy import ForeignKey
+from sqlalchemy.orm import declarative_base, relationship
 
 
 # Establish connectivity - the Engine
@@ -52,6 +53,36 @@ address_table = Table(
 
 # Create the database
 metadata.create_all(engine)
+
+##########################################
+# Define Tables using ORM
+Base = declarative_base()
+print(Base)
+
+class User(Base):
+    __tablename__ = 'user_account'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(30))
+    fullname = Column(String)
+
+    addresses = relationship("Address", back_populates="user")
+
+    def __repr__(self):
+       return f"User(id={self.id!r}, name={self.name!r}, fullname={self.fullname!r})"
+
+class Address(Base):
+    __tablename__ = 'address'
+
+    id = Column(Integer, primary_key=True)
+    email_address = Column(String, nullable=False)
+    user_id = Column(Integer, ForeignKey('user_account.id'))
+
+    user = relationship("User", back_populates="addresses")
+
+    def __repr__(self):
+        return f"Address(id={self.id!r}, email_address={self.email_address!r})"
+
 
 """ Insert Rows with Core"""
 stmt = insert(user_table).values(name='spongebob', fullname="Spongebob Squarepants")
@@ -120,6 +151,7 @@ with engine.connect() as conn:
     result = conn.execute(select(address_table))
     for r in result:
         print(r)
+
 
 #########################################
 """ 
@@ -273,7 +305,6 @@ SELECT count(:count_2) AS count_1
 FROM user_account
 """
 
-
 # Setting on the ON Clause
 # Both Select.join() and Select.join_from() accept an additional argument 
 # for the ON clause, which is stated using the same SQL Expression mechanics 
@@ -283,3 +314,60 @@ print(
     .select_from(user_table)
     .join(address_table, user_table.c.id == address_table.c.user_id)
 )
+
+# OUTER and FULL join
+# Both the Select.join() and Select.join_from() methods accept keyword 
+# arguments Select.join.isouter and Select.join.full which will render 
+# LEFT OUTER JOIN and FULL OUTER JOIN, respectively:
+print("--- OUTER and FULL join ---")
+stmt1 = select(user_table.c.name, address_table.c.email_address).join(address_table, isouter=True)
+#stmt1 = select(user_table.c.name, address_table.c.email_address).outerjoin(address_table)
+print(stmt1)
+"""
+SELECT user_account.id, user_account.name, user_account.fullname
+FROM user_account LEFT OUTER JOIN address ON user_account.id = address.user
+"""
+stmt2 = select(user_table).join(address_table, full=True)
+print(stmt2)
+"""
+SELECT user_account.id, user_account.name, user_account.fullname
+FROM user_account FULL OUTER JOIN address ON user_account.id = address.user_id
+"""
+with engine.connect() as conn:
+    print(conn.execute(stmt1).all())
+    # print(session.execute(stmt2).all())   # FULL and RIGHT Outer join not suppored in sqllite3
+
+# ORDER BY, GROUP BY, HAVING
+print(" --- ORDER BY, GROUP BY, HAVING ---")
+stmt = select(user_table).order_by(user_table.c.name.asc())
+#stmt = select(user_table).order_by(user_table.c.name.desc())
+with engine.connect() as conn:
+    print(conn.execute(stmt).all())
+
+
+# Aggregate functions with GROUP BY / HAVING
+# SQLAlchemy provides for SQL functions in an open-ended 
+# way using a namespace known as func
+print("--- Aggregate functions with GROUP BY / HAVING ---")
+from sqlalchemy import func
+# count_fn = func.count(user_table.c.id)
+# print(count_fn)
+with engine.connect() as conn:
+    result = conn.execute(
+        select(User.name, func.count(Address.id).label("count")).
+        join(Address).
+        group_by(User.name).
+        having(func.count(Address.id) > 1)
+    )
+    print(result.all())
+
+# rdering or Grouping by a Label
+from sqlalchemy import func, desc
+stmt = select(Address.user_id, User.name,
+        func.count(Address.id).label('num_addresses')). \
+        join(Address). \
+        group_by("user_id").order_by("user_id", desc("num_addresses"))
+print(stmt)
+with engine.connect() as conn:
+    result = conn.execute(stmt)
+    print(result.all())
