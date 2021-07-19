@@ -119,6 +119,22 @@ class Address(Base):
     def __repr__(self):
          return f"Address({self.email_address!r})"
 
+
+""" INSERT...FROM SELECT """
+print("----INSERT...FROM SELECT ---")
+select_stmt = select(User.id, User.name + "@aol.com")
+insert_stmt = insert(Address).from_select(
+    ["user_id", "email_address"], select_stmt
+)
+# print(insert_stmt)
+with Session(engine) as session:
+    result = session.execute(insert_stmt)
+    session.commit()
+    result = session.execute(select(Address))
+    for r in result:
+        print(r)
+
+
 # ORM select()
 print("---- select ORM ------")
 stmt = select(User).where(User.name == "spongebob")
@@ -301,17 +317,47 @@ FROM user_account JOIN address ON user_account.id = address.user_id
 print("--- OUTER and FULL join ---")
 # stmt1 = select(User).join(Address, isouter=True)
 stmt1 = select(User.name, Address.email_address).outerjoin(Address)
-print(stmt)
+print(stmt1)
 """
 SELECT user_account.id, user_account.name, user_account.fullname
 FROM user_account LEFT OUTER JOIN address ON user_account.id = address.user
 """
-stmt2 = select(User).join(Address, full=True)
+stmt2 = select(User.name, Address.email_address).join(Address, full=True)
 print(stmt2)
 """
 SELECT user_account.id, user_account.name, user_account.fullname
 FROM user_account FULL OUTER JOIN address ON user_account.id = address.user_id
 """
 with Session(engine) as session:
+    # print(session.execute(select(User)).all())
+    # print(session.execute(select(Address)).all())
     print(session.execute(stmt1).all())
     # print(session.execute(stmt2).all())   # FULL and RIGHT Outer join not suppored in sqllite3
+
+
+# ORDER BY, GROUP BY, HAVING
+print(" --- ORDER BY, GROUP BY, HAVING ---")
+print(select(User).order_by(User.name.asc()))
+print(select(User).order_by(User.fullname.desc()))
+
+# Aggregate functions with GROUP BY / HAVING
+# SQLAlchemy provides for SQL functions in an open-ended 
+# way using a namespace known as func
+print("--- Aggregate functions with GROUP BY / HAVING ---")
+from sqlalchemy import func
+count_fn = func.count(user_table.c.id)
+print(count_fn)
+
+with engine.connect() as conn:
+    result = conn.execute(
+        select(User.name, func.count(Address.id).label("count")).
+        join(Address).
+        group_by(User.name).
+        having(func.count(Address.id) > 1)
+    )
+    print(result.all())
+"""
+count(user_account.id)
+[('sandy', 3), ('spongebob', 2)]
+"""
+
