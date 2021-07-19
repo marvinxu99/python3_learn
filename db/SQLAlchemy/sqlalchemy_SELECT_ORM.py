@@ -184,4 +184,70 @@ with Session(engine) as session:
     for row in session.execute(stmt):
         print(f"{row.p}, {row.name}")
 
+
 # The WHERE clause
+# (1) To produce expressions joined by AND, where() method maybe invoked any number of times:
+print(
+    select(Address.email_address).
+    where(User.name == 'squidward').
+    where(Address.user_id == User.id)
+)
+'''
+SELECT address.email_address 
+FROM address, user_account
+WHERE user_account.name = :name_1 AND address.user_id = user_account.id
+'''
+#(2) A single call to Select.where() also accepts multiple expressions with the same effect:
+print(
+    select(Address.email_address).
+    where(
+        User.name == 'squidward',
+        Address.user_id == User.id
+    )
+)
+'''
+SELECT address.email_address
+FROM address, user_account
+WHERE user_account.name = :name_1 AND address.user_id = user_account.id 
+'''
+# (3) “AND” and “OR” conjunctions are both available directly using the and_() 
+# and or_() functions, illustrated below in terms of ORM entities:
+from sqlalchemy import and_, or_
+print(
+    select(Address.email_address)
+    .where(
+        and_(
+            or_(
+                User.name == 'squidward', 
+                User.name == 'sandy'
+            ),
+            Address.user_id == User.id
+        )
+    )
+)
+"""
+SELECT address.email_address
+FROM address, user_account
+WHERE (user_account.name = :name_1 OR user_account.name = :name_2) AND address.user_id = user_account.id
+"""
+#(4) select().filter_by()
+print(
+    select(User).filter_by(name='spongebob', fullname='Spongebob Squarepants')
+)
+"""
+SELECT user_account.id, user_account.name, user_account.fullname
+FROM user_account
+WHERE user_account.name = :name_1 AND user_account.fullname = :fullname_1 
+"""
+
+# Explicit FROM clauses and JOINs
+print("--- Explicit FROM clauses and JOINs ---")
+# (1) select().join_from()
+print(
+    select(User.name, Address.email_address)
+    .join_from(User, Address)
+) 
+"""
+SELECT user_account.name, address.email_address
+FROM user_account JOIN address ON user_account.id = address.user_id 
+"""
