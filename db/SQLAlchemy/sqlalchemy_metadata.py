@@ -119,21 +119,21 @@ This form is called hybrid table, and it consists of assigning to
 the .__table__ attribute directly, rather than having the declarative process 
 generate it.
 """
-# class User(Base):
-#     __table__ = user_table
+class User(Base):
+    __table__ = user_table
 
-#      addresses = relationship("Address", back_populates="user")
+    addresses = relationship("Address", back_populates="user")
 
-#      def __repr__(self):
-#         return f"User({self.name!r}, {self.fullname!r})"
+    def __repr__(self):
+        return f"User({self.name!r}, {self.fullname!r})"
 
-# class Address(Base):
-#     __table__ = address_table
+class Address(Base):
+    __table__ = address_table
 
-#      user = relationship("User", back_populates="addresses")
+    user = relationship("User", back_populates="addresses")
 
-#      def __repr__(self):
-#          return f"Address({self.email_address!r})"
+    def __repr__(self):
+         return f"Address({self.email_address!r})"
 
 """" Table reflection """
 # Getting a connection - "commit as you go" style
