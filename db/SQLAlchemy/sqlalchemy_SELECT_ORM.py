@@ -10,7 +10,7 @@ the returned Result object.
 
 from sqlalchemy import create_engine
 from sqlalchemy import insert, select, bindparam
-from sqlalchemy import MetaData, Table, Column, Integer, String
+from sqlalchemy import MetaData, Table, Column, Integer, String, text
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Session, declarative_base, relationship
 
@@ -153,6 +153,35 @@ stmt = (
     ).order_by(User.name)
 )
 with Session(engine) as session:
-    for row in session.execute(stmt):
+    results = session.execute(stmt)
+    # print(results.first())
+    for row in results:
         # print(f"{row.username}")
         print(row.username, ', ', row.fullname)
+
+# Selecting with Textual Column Expressions
+print("--- Selecting with Textual Column Expressions ---")
+stmt = (
+    select(
+        text("'some phrase'"), User.name, User.fullname
+    ).order_by(User.name)
+)
+with Session(engine) as session:
+    print(session.execute(stmt).all())
+
+# In this common case we can get more functionality out of our textual 
+# fragment using the literal_column() construct instead. This object is 
+# similar to text() except that instead of representing arbitrary SQL of 
+# any form, it explicitly represents a single “column” and can then be 
+# labeled and referred towards in subqueries and other expressions
+from sqlalchemy import literal_column
+stmt = (
+    select(
+        literal_column("'some phrase'").label("p"), User.name
+    ).order_by(User.name)
+)
+with Session(engine) as session:
+    for row in session.execute(stmt):
+        print(f"{row.p}, {row.name}")
+
+# The WHERE clause

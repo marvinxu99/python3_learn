@@ -11,6 +11,7 @@ the returned Result object.
 from sqlalchemy import create_engine
 from sqlalchemy import insert, select, bindparam
 from sqlalchemy import MetaData, Table, Column, Integer, String
+from sqlalchemy import text
 from sqlalchemy import ForeignKey
 
 
@@ -154,4 +155,25 @@ with engine.connect() as conn:
 
 # Selecting with Textual Column Expressions
 print("--- Selecting with Textual Column Expressions ---")
+stmt = (
+    select(
+        text("'some phrase'"), user_table.c.name
+    ).order_by(user_table.c.name)
+)
+with engine.connect() as conn:
+    print(conn.execute(stmt).all())
 
+# In this common case we can get more functionality out of our textual 
+# fragment using the literal_column() construct instead. This object is 
+# similar to text() except that instead of representing arbitrary SQL of 
+# any form, it explicitly represents a single “column” and can then be 
+# labeled and referred towards in subqueries and other expressions
+from sqlalchemy import literal_column
+stmt = (
+    select(
+        literal_column("'some phrase'").label("p"), user_table.c.name
+    ).order_by(user_table.c.name)
+)
+with engine.connect() as conn:
+    for row in conn.execute(stmt):
+        print(f"{row.p}, {row.name}")
