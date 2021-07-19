@@ -245,3 +245,33 @@ print(
 SELECT user_account.name, address.email_address
 FROM user_account JOIN address ON user_account.id = address.user_id 
 """
+
+# (2) Select.join() method, which indicates only the right side of the JOIN, 
+# the left hand-side is inferred:
+print(
+    select(user_table.c.name, address_table.c.email_address).
+    join(address_table)
+)
+"""
+SELECT user_account.name, address.email_address
+FROM user_account JOIN address ON user_account.id = address.user_id  
+"""
+# (3) Select.from() method - used if the columns clause does not
+print(
+    select(user_table.c.name, address_table.c.email_address).
+    select_from(user_table).join(address_table)
+)
+
+# Select.from() method is used if the columns clause does not have enough info 
+# to provide for a FROM clause.
+from sqlalchemy import func
+print (
+    select(func.count('*')).select_from(user_table)
+)
+"""
+SELECT count(:count_2) AS count_1
+FROM user_account
+"""
+
+
+# Setting on the ON Clause
