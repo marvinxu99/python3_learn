@@ -275,3 +275,11 @@ FROM user_account
 
 
 # Setting on the ON Clause
+# Both Select.join() and Select.join_from() accept an additional argument 
+# for the ON clause, which is stated using the same SQL Expression mechanics 
+# as we saw about in The WHERE clause
+print(
+    select(address_table.c.email_address)
+    .select_from(user_table)
+    .join(address_table, user_table.c.id == address_table.c.user_id)
+)
