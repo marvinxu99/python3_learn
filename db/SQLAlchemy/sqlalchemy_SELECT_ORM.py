@@ -279,5 +279,39 @@ SELECT count(:count_2) AS count_1
 FROM user_account
 """
 
-
 # Setting on the ON Clause
+# Both Select.join() and Select.join_from() accept an additional argument 
+# for the ON clause, which is stated using the same SQL Expression mechanics 
+# as we saw about in The WHERE clause
+print("--- Setting on the ON Clause ---")
+print(
+    select(Address.email_address)
+    .select_from(User)
+    .join(Address, User.id == Address.user_id)
+)
+"""
+SELECT address.email_address
+FROM user_account JOIN address ON user_account.id = address.user_id 
+"""
+
+# OUTER and FULL join
+# Both the Select.join() and Select.join_from() methods accept keyword 
+# arguments Select.join.isouter and Select.join.full which will render 
+# LEFT OUTER JOIN and FULL OUTER JOIN, respectively:
+print("--- OUTER and FULL join ---")
+# stmt1 = select(User).join(Address, isouter=True)
+stmt1 = select(User.name, Address.email_address).outerjoin(Address)
+print(stmt)
+"""
+SELECT user_account.id, user_account.name, user_account.fullname
+FROM user_account LEFT OUTER JOIN address ON user_account.id = address.user
+"""
+stmt2 = select(User).join(Address, full=True)
+print(stmt2)
+"""
+SELECT user_account.id, user_account.name, user_account.fullname
+FROM user_account FULL OUTER JOIN address ON user_account.id = address.user_id
+"""
+with Session(engine) as session:
+    print(session.execute(stmt1).all())
+    # print(session.execute(stmt2).all())   # FULL and RIGHT Outer join not suppored in sqllite3
