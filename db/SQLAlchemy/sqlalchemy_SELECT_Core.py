@@ -371,3 +371,18 @@ print(stmt)
 with engine.connect() as conn:
     result = conn.execute(stmt)
     print(result.all())
+
+# Using Alias
+print("--- Using Alias ---")
+# user_alias_1 = user_table.alias()
+# user_alias_2 = user_table.alias()
+# print(
+#     select(user_alias_1.c.name, user_alias_2.c.name).
+#     join_from(user_alias_1, user_alias_2, user_alias_1.c.id > user_alias_2.c.id)
+# )
+u1 = user_table.alias()
+u2 = user_table.alias()
+print(
+    select(u1.c.name, u2.c.name).
+    join_from(u1, u2, u1.c.id > u2.c.id)
+)

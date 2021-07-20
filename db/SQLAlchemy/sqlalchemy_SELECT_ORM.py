@@ -345,9 +345,8 @@ print(select(User).order_by(User.fullname.desc()))
 # way using a namespace known as func
 print("--- Aggregate functions with GROUP BY / HAVING ---")
 from sqlalchemy import func
-count_fn = func.count(user_table.c.id)
-print(count_fn)
-
+# count_fn = func.count(user_table.c.id)
+# print(count_fn)
 with engine.connect() as conn:
     result = conn.execute(
         select(User.name, func.count(Address.id).label("count")).
@@ -360,4 +359,26 @@ with engine.connect() as conn:
 count(user_account.id)
 [('sandy', 3), ('spongebob', 2)]
 """
+# rdering or Grouping by a Label
+from sqlalchemy import func, desc
+stmt = select(Address.user_id, User.name,
+        func.count(Address.id).label('num_addresses')). \
+        join(Address). \
+        group_by("user_id").order_by("user_id", desc("num_addresses"))
+print(stmt)
+with Session(engine) as session:
+    result = session.execute(stmt)
+    print(result.all())
 
+# Using Alias
+print("--- Using Alias ---")
+from sqlalchemy.orm import aliased
+address_alias_1 = aliased(Address)
+address_alias_2 = aliased(Address)
+print(
+    select(User).
+    join_from(User, address_alias_1).
+    where(address_alias_1.email_address == 'patrick@aol.com').
+    join_from(User, address_alias_2).
+    where(address_alias_2.email_address == 'patrick@gmail.com')
+)
