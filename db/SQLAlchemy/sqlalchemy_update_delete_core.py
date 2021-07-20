@@ -7,6 +7,8 @@ from sqlalchemy import create_engine
 from sqlalchemy import insert, select, bindparam, update
 from sqlalchemy import MetaData, Table, Column, Integer, String
 from sqlalchemy import ForeignKey
+from decouple import config         # pip install python-decouple
+
 
 
 # Establish connectivity - the Engine
@@ -122,3 +124,70 @@ with engine.connect() as conn:
     conn.commit()
     result = conn.execute(select(user_table))
     print(result.all())
+
+# Correlated Updates
+print("--- Correlated Updated ---")
+scalar_subq = (
+    select(address_table.c.email_address).
+    where(address_table.c.user_id == user_table.c.id).
+    order_by(address_table.c.id).
+    limit(1).
+    scalar_subquery()
+)
+update_stmt = (
+    update(user_table).
+    where(user_table.c.id==1).
+    values(fullname=scalar_subq)
+)
+print(update_stmt)
+with engine.connect() as conn:
+    conn.execute(update_stmt)
+    conn.commit()
+    result = conn.execute(select(user_table))
+    print(result.all())
+
+# UPDATE..FROM
+print("--- Update.. FROM ---")
+'''
+>>> update_stmt = (
+...    update(user_table).
+...    where(user_table.c.id == address_table.c.user_id).
+...    where(address_table.c.email_address == 'patrick@aol.com').
+...    values(fullname='Pat')
+...  )
+>>> print(update_stmt)
+UPDATE user_account SET fullname=:fullname FROM address
+WHERE user_account.id = address.user_id AND address.email_address = :email_address_1
+'''
+
+# The delete() SQL Expression Construct
+print("--- The delete() SQL Expression Construct ---")
+from sqlalchemy import delete
+stmt = delete(user_table).where(user_table.c.name == 'patrick')
+print(stmt)
+with engine.connect() as conn:
+    result = conn.execute(select(user_table))
+    print(result.all())
+    
+    conn.execute(stmt)
+    conn.commit()
+    
+    result = conn.execute(select(user_table))
+    print(result.all())
+
+print("--- Multiple Table Deletes ---")
+# Some dialects may not support this 
+# delete_stmt = (
+#     delete(user_table).
+#     where(user_table.c.id == address_table.c.user_id).
+#     where(address_table.c.email_address == 'patrick@aol.com')
+#  )
+# with engine.connect() as conn:
+#     result = conn.execute(select(user_table))
+#     print(result.all())
+    
+#     conn.execute(delete_stmt)
+#     conn.commit()
+    
+#     result = conn.execute(select(user_table))
+#     print(result.all())

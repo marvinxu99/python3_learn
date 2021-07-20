@@ -9,10 +9,14 @@ from sqlalchemy import MetaData, Table, Column, Integer, String
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Session
 from sqlalchemy.orm import declarative_base, relationship
+from decouple import config         # pip install python-decouple
+
 
 # Establish connectivity - the Engine
-# engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
+# # engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
 engine = create_engine("sqlite+pysqlite:///:memory:", echo=False, future=True)
+# db_string = config("DB_PG_SQLALCHEMY")   # from .env
+# engine = create_engine(db_string)
 
 """
 Setting up MetaData with Table objects (SQLAlchemy Core)
@@ -130,7 +134,6 @@ with Session(engine) as session:
     result = session.execute(select(User))
     print(result.all())
 
-
 # Update executemany():
 print("--- # Update executemany(), bindparam ---")
 stmt = (
@@ -139,8 +142,8 @@ stmt = (
     values(fullname=bindparam('newname'))
 )
 print(stmt)
-with engine.connect() as conn:
-    conn.execute(
+with Session(engine) as session:
+    session.execute(
         stmt,
         [
             {'oldname':'patrick', 'newname':'ed'},
@@ -148,5 +151,40 @@ with engine.connect() as conn:
             {'oldname':'jim', 'newname':'jake'},
         ]
     )
-    conn.commit()
-    print(conn.execute(select(User)).all())
+    session.commit()
+    print(session.execute(select(User)).all())
+
+# Correlated Updates
+print("--- Correlated Updated ---")
+scalar_subq = (
+    select(Address.email_address).
+    where(Address.user_id == User.id).
+    order_by(Address.id).
+    limit(1).
+    scalar_subquery()
+)
+update_stmt = (
+    update(User).
+    # where(User.id==1).
+    values(fullname=scalar_subq)
+)
+print(update_stmt)
+with Session(engine) as session:
+    session.execute(update_stmt)
+    session.commit()
+    result = session.execute(select(User))
+    print(result.all())
+
+# UPDATE..FROM
+print("--- Update.. FROM ---")
+"""
+>>> update_stmt = (
+...    update(user_table).
+...    where(user_table.c.id == address_table.c.user_id).
+...    where(address_table.c.email_address == 'patrick@aol.com').
+...    values(fullname='Pat')
+...  )
+>>> print(update_stmt)
+UPDATE user_account SET fullname=:fullname FROM address
+WHERE user_account.id = address.user_id AND address.email_address = :email_address_1
+"""
