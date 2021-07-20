@@ -88,13 +88,13 @@ with engine.connect() as conn:
                 )
             .where(user_table.c.id==address_table.c.user_id)
         )
-    print(result.all())
+    print(result.all()) 
 
 # Update 
 # The update() SQL Expression Construct
 stmt = (
     update(user_table).where(user_table.c.name == 'patrick').
-    values(fullname='Patrick ITi')
+    values(fullname='Patrick Swap')
 )
 with engine.connect() as conn:
     conn.execute(stmt)
