@@ -140,17 +140,17 @@ with engine.connect() as conn:
 
 """ INSERT...FROM SELECT """
 print("----INSERT...FROM SELECT ---")
-select_stmt = select(user_table.c.id, user_table.c.name + "@aol.com")
-insert_stmt = insert(address_table).from_select(
-    ["user_id", "email_address"], select_stmt
-)
-# print(insert_stmt)
-with engine.connect() as conn:
-    result = conn.execute(insert_stmt)
-    conn.commit()
-    result = conn.execute(select(address_table))
-    for r in result:
-        print(r)
+# select_stmt = select(user_table.c.id, user_table.c.name + "@aol.com")
+# insert_stmt = insert(address_table).from_select(
+#     ["user_id", "email_address"], select_stmt
+# )
+# # print(insert_stmt)
+# with engine.connect() as conn:
+#     result = conn.execute(insert_stmt)
+#     conn.commit()
+#     result = conn.execute(select(address_table))
+#     for r in result:
+#         print(r)
 
 
 #########################################
@@ -386,3 +386,79 @@ print(
     select(u1.c.name, u2.c.name).
     join_from(u1, u2, u1.c.id > u2.c.id)
 )
+
+# Subqueries and CTEs
+print("--- Subqueries and CTEs ---")
+subq = select(
+    func.count(address_table.c.id).label("count"),
+    address_table.c.user_id
+).group_by(address_table.c.user_id).subquery()
+stmt = select(
+    user_table.c.name,
+    user_table.c.fullname,
+    subq.c.count
+).join_from(user_table, subq)
+print(stmt)
+
+# CTE: Select.cte()
+
+#Scalar and Correlated Subqueries
+# A scalar subquery is a subquery that returns exactly zero or one row 
+# and exactly one column.
+
+# UNION, UNION ALL and other set operations
+print("--- UNION, UNION ALL and other set operations ---")
+from sqlalchemy import union_all
+stmt1 = select(user_table).where(user_table.c.name == 'sandy')
+stmt2 = select(user_table).where(user_table.c.name == 'spongebob')
+u = union_all(stmt1, stmt2)
+with engine.connect() as conn:
+    result = conn.execute(u)
+    print(result.all())
+
+
+#EXISTS subqueries
+print("--- EXISTS subqueries ---")
+subq = (
+    select(func.count(address_table.c.id)).
+    where(user_table.c.id == address_table.c.user_id).
+    group_by(address_table.c.user_id).
+    having(func.count(address_table.c.id) > 1)
+).exists()
+with engine.connect() as conn:
+    result = conn.execute(
+        select(user_table.c.name).where(subq)
+    )
+    print(result.all())
+
+# Not exists
+print("---- NOT EXISTS ---") 
+subq = (
+    select(address_table.c.id).
+    where(user_table.c.id == address_table.c.user_id)
+).exists()
+with engine.connect() as conn:
+    result = conn.execute(
+        select(user_table.c.name).where(~subq)
+    )
+    print(result.all())
+
+
+#Working with SQL Functions
+print("--- Working with SQL Functions ---")
+# count()
+# max(), min()
+# now()
+# concat(), lower(), upper()
+
+from sqlalchemy.dialects import postgresql
+print(select(func.now()).compile(dialect=postgresql.dialect()))
+"""
+SELECT now() AS now_1
+"""
+
+from sqlalchemy.dialects import oracle
+print(select(func.now()).compile(dialect=oracle.dialect()))
+"""
+SELECT CURRENT_TIMESTAMP AS now_1 FROM DUAL
+"""

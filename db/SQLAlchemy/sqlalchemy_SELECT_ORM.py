@@ -382,3 +382,12 @@ print(
     join_from(User, address_alias_2).
     where(address_alias_2.email_address == 'patrick@gmail.com')
 )
+
+# Subqueries and CTEs
+print("--- Subqueries and CTEs ---")
+subq = select(Address).where(~Address.email_address.like('%@aol.com')).subquery()
+address_subq = aliased(Address, subq)
+stmt = select(User, address_subq).join_from(User, address_subq).order_by(User.id, address_subq.id)
+with Session(engine) as session:
+    for user, address in session.execute(stmt):
+        print(f"{user} {address}")
