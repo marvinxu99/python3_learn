@@ -14,15 +14,10 @@ from sqlalchemy.orm import declarative_base, relationship
 # Establish connectivity - the Engine
 engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
 
-"""
-Setting up MetaData with Table objects (SQLAlchemy Core)
-"""
-# MetaData object
-metadata = MetaData()
-
 Base = declarative_base()
-print(Base)
+# print(Base)
 
+# Defining Table Metadata with the ORM
 class User(Base):
     __tablename__ = 'user_account'
 
@@ -58,5 +53,16 @@ Base.metadata.create_all(engine)
 
 
 # Manipulate databases...
+
+print("--- Instances of Classes represent Rows ---")
+squidward = User(name="squidward", fullname='Squidward Tentacles')
+krabs = User(name='ehkrabs', fullname='Eugene H. Krabs')
+# print(id(krabs))
+
+with Session(engine) as session:
+    session.add(squidward)
+    session.add(krabs)
+    # print(session.new)  # to see a collection on the session
+    session.flush()
 
 
