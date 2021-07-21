@@ -129,14 +129,18 @@ with Session(engine) as session:
 print("--- Using Relationships to Join ---")
 with Session(engine) as session:
     result = session.execute(
-        select(Address.email_address).
+        select(User.name, Address.email_address).
         select_from(User).
         where(User.name == 'sandy').
         join(User.addresses)
     )
     print(result.all())
 
-
-
-    
-
+print("Joining between Aliased targets")
+print(
+    select(User).
+    join(User.addresses.of_type(address_alias_1)).
+    where(address_alias_1.email_address == "patrick@aol.com").
+    join(User.addresses.of_type(address_alias_2)).
+    where(address_alias_2.email.address == "patrick@gmail.com")
+)
