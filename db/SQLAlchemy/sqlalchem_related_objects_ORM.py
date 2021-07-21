@@ -12,10 +12,9 @@ from sqlalchemy.orm import declarative_base, relationship
 
 
 # Establish connectivity - the Engine
-engine = create_engine("sqlite+pysqlite:///:memory:", echo=False, future=True)
+engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
 
 Base = declarative_base()
-# print(Base)
 
 # Defining Table Metadata with the ORM
 class User(Base):
@@ -42,13 +41,6 @@ class Address(Base):
     def __repr__(self):
         return f"Address(id={self.id!r}, email_address={self.email_address!r})"
 
-# print(User.__table__)
-# print(Address.__table__)
-
-# emit CREATE statements if given ORM registry
-# mapper_registry.metadata.create_all(engine)
-# The identical MetaData object is also present on the
-# declarative base
 Base.metadata.create_all(engine)
 
 # Manipulate databases...
@@ -93,34 +85,58 @@ with Session(engine) as session:
     session.commit()
 
 
-print("--- Updating ORM Objects ---")
+print("--- working with related objects ---")
 with Session(engine) as session:
     sandy = session.execute(select(User).filter_by(name="sandy")).scalar_one()
-    print(sandy)   
-    sandy.fullname="Sandy Squirrels"
-    print ("sandy in session.dirty:", sandy in session.dirty)
-    sandy = session.execute(select(User).filter_by(name="sandy")).scalar_one()
-    print(sandy.addresses)
-
-    print("--- ORM-enabled UPDATE statements ---")
-    session.execute(
-        update(User).
-        where(User.name == 'sandy').
-        values(fullname='Sandy Squirrel Extraordinaire')
+    print(sandy.addresses)   
+    print(sandy.addresses[0].email_address)   
+    sandy.addresses[0].email_address = "newemail@gmail.com"
+    print(session.execute(
+        select(User.name, Address.email_address).
+        where(User.id == Address.user_id and User.name == 'sandy'))
     )
-    print(session.execute(select(User)).all())
-
-    print("--- Deleting ORM Objects ---")
-    patrick = session.get(User, 4)
-    print(patrick)
-    session.delete(patrick)
-    print(session.execute(select(User)).all())
-
-    # session.execute(select(User).where(User.name == "patrick")).first()
-    # session.execute(delete(User).where(User.name == "sandy"))
-
     session.commit()
-    #session.rollback()
+
+print("--- Persisting and Loading Relationships ---")
+with Session(engine) as session:
+    u1 = User(name='pkrabs', fullname='Pearl Krabs')
+    print(u1.addresses)
+
+    a1 = Address(email_address="pearl.krabs@gmail.com")
+    u1.addresses.append(a1)
+    print(u1.addresses)
+    print(a1.user)
+
+    a2 = Address(email_address="pearl@aol.com", user=u1)
+    # a2 = Address(email_address="pearl@aol.com")
+    # a2.user = u1
+    print(u1.addresses)
+
+    print("--- adding u1 will auto add a1, a2 ---")
+    session.add(u1)  # will also atuo add a1 & a2
+    session.flush()
+
+    print(session.execute(
+        select(User.name, Address.email_address).
+        where(User.id == Address.user_id)).all()
+    )
+    session.commit()
+
+    print('-- loading relationship ---')
+    print(u1.id)
+    print(u1.addresses)
+
+print("--- Using Relationships to Join ---")
+with Session(engine) as session:
+    result = session.execute(
+        select(Address.email_address).
+        select_from(User).
+        where(User.name == 'sandy').
+        join(User.addresses)
+    )
+    print(result.all())
+
+
 
     
 
