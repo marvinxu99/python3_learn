@@ -7,12 +7,12 @@ from sqlalchemy import create_engine
 from sqlalchemy import select, update, delete, insert, bindparam
 from sqlalchemy import MetaData, Table, Column, Integer, String
 from sqlalchemy import ForeignKey
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, aliased, selectinload
 from sqlalchemy.orm import declarative_base, relationship
 
 
 # Establish connectivity - the Engine
-engine = create_engine("sqlite+pysqlite:///:memory:", echo=True, future=True)
+engine = create_engine("sqlite+pysqlite:///:memory:", echo=False, future=True)
 
 Base = declarative_base()
 
@@ -136,11 +136,36 @@ with Session(engine) as session:
     )
     print(result.all())
 
-print("Joining between Aliased targets")
+print("--- Joining between Aliased targets ---")
+address_alias_1 = aliased(Address)
+address_alias_2 = aliased(Address)
 print(
-    select(User).
-    join(User.addresses.of_type(address_alias_1)).
-    where(address_alias_1.email_address == "patrick@aol.com").
-    join(User.addresses.of_type(address_alias_2)).
-    where(address_alias_2.email.address == "patrick@gmail.com")
+      select(User).
+       join(User.addresses.of_type(address_alias_1)).
+       where(address_alias_1.email_address == 'patrick@aol.com').
+       join(User.addresses.of_type(address_alias_2)).
+       where(address_alias_2.email_address == 'patrick@gmail.com')
+   )
+
+user_alias_1 = aliased(User)
+print(
+    select(user_alias_1.name).
+    join(user_alias_1.addresses)
 )
+
+print("--- Augmenting the ON Criteria ---")
+stmt = (
+    select(User.fullname).
+    join(User.addresses.and_(Address.email_address == "pearl.krabs@gmail.com"))
+)
+with Session(engine) as session:
+    print(session.execute(stmt).all())
+
+
+print("--- Loader Strategy ---")
+with Session(engine) as session:
+    for user_obj in session.execute(
+        select(User).options(selectinload(User.addresses))
+        # .where(User.addresses != None)
+        ).scalars():
+            print(user_obj.name, user_obj.addresses)  # access addresses collection already loaded
