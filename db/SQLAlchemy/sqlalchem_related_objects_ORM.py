@@ -169,3 +169,25 @@ with Session(engine) as session:
         # .where(User.addresses != None)
         ).scalars():
             print(user_obj.name, user_obj.addresses)  # access addresses collection already loaded
+
+print("--- selectinload() ---")
+from sqlalchemy.orm import selectinload
+stmt = (
+    select(User).options(selectinload(User.addresses)).order_by(User.id)
+)
+with Session(engine) as session:
+    for row in session.execute(stmt):
+        print(f"{row.User.name}  ({', '.join(a.email_address for a in row.User.addresses)})")
+
+print("--- joinedload ---")
+from sqlalchemy.orm import joinedload
+stmt = (
+    select(Address).options(joinedload(Address.user, innerjoin=True)).order_by(Address.id)
+)
+with Session(engine) as session:
+    for row in session.execute(stmt):
+        print(f"{row.Address.email_address} {row.Address.user.name}")
+
+print("--- Explicit Join + Eager load ---")
+
+#Augmenting Loader Strategy Paths
