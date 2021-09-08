@@ -1,7 +1,7 @@
 # Demonstrate how to customize logging output
 """
 basicConfig(
-    format = formatstr
+    format = formatstr,
     datrfmt = date_format_str
 )
 %(asctime)s

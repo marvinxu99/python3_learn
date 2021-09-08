@@ -26,3 +26,18 @@ def sum(num1, num2):
 
 print(sum('1', 2))
 
+
+# example #3
+import sys
+file_name = sys.argv[1]
+text = []
+try:
+    fh = open(file_name, 'r')
+except IOError:
+    print('cannot open', file_name)
+else:
+    text = fh.readlines()
+    fh.close()
+
+if text:
+    print(text[100])
