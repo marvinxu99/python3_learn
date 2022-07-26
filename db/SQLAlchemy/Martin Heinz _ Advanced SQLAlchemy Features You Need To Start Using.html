@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://martinheinz.dev/blog/28 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+}</style><link rel="preload" href="https://martinheinz.dev/fonts/OxygenMono-Regular.c982b754.woff2" as="font" crossorigin=""><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" type="image/png" href="https://i.imgur.com/IUf6PIg.png"><meta name="description" content="Welcome to my personal website and blog, here you can find some information
+    about me, contact, social media links as well as my blog posts."><meta name="author" content="Martin Heinz"><meta property="og:image" content="https://res.cloudinary.com/martinheinz/image/upload/v1567247069/blog/og_image_s4v0wv.png"><meta property="og:type" content="image/png"><meta property="og:width" content="500"><meta property="og:height" content="275"><meta property="og:description" content="Welcome to my personal website and blog, here you can find some information about me, contact, social media links as well as
+    my blog posts"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Martin Heinz - Personal Website &amp; Blog"><meta name="twitter:text:title" content="Martin Heinz - Personal Website &amp; Blog"><meta name="twitter:description" content="Welcome to my personal website and blog, here you can find some information about me, contact, social media links as well as
+    my blog posts"><meta name="twitter:image" content="https://res.cloudinary.com/martinheinz/image/upload/v1567247069/blog/og_image_s4v0wv.png"><meta name="twitter:site" content="@Martin_Heinz_"><meta name="twitter:creator" content="@Martin_Heinz_"><script type="text/javascript" async="" src="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/analytics.js.download"></script><script type="application/ld+json">{
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "name": "Martin Heinz",
+            "url": "https://martinheinz.dev",
+            "jobTitle": "DevOps Engineer",
+            "alumniOf": "Comenius University in Bratislava",
+            "gender": "male",
+            "image": "",
+            "sameAs": [
+                "https://www.linkedin.com/in/heinz-martin/",
+                "https://dev.to/martinheinz",
+                "https://medium.com/@martin.heinz",
+                "https://twitter.com/Martin_Heinz_"
+            ]
+        }</script><script type="application/ld+json">{
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Martin Heinz - Personal Website & Blog",
+        "url": "https://martinheinz.dev",
+        "sameAs": [
+            "https://www.linkedin.com/in/heinz-martin/",
+            "https://dev.to/martinheinz",
+            "https://medium.com/@martin.heinz",
+            "https://twitter.com/Martin_Heinz_"
+        ],
+        "author": {
+            "@type": "Person",
+            "name": "Martin Heinz",
+            "url": "https://martinheinz.dev"
+        }
+    }</script><script async="" src="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/js"></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145317190-1');</script><link href="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/app.397c9c76.css" rel="preload" as="style"><link href="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/chunk-vendors.8cfadc47.css" rel="preload" as="style"><link href="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/app.2f203551.js.download" rel="preload" as="script"><link href="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/chunk-vendors.8018a4cd.js.download" rel="preload" as="script"><link href="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/chunk-vendors.8cfadc47.css" rel="stylesheet"><link href="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/app.397c9c76.css" rel="stylesheet"><title>Martin Heinz | Advanced SQLAlchemy Features You Need To Start Using</title><meta data-vue-meta="1" name="og:image" content="https://res.cloudinary.com/martinheinz/image/upload/v1567247069/blog/og_image_s4v0wv.png"><meta data-vue-meta="1" name="og:image:type" content="image/png"><meta data-vue-meta="1" name="og:image:width" content="500"><meta data-vue-meta="1" name="og:image:height" content="275"><meta data-vue-meta="1" name="title" content="Advanced SQLAlchemy Features You Need To Start Using"><meta data-vue-meta="1" name="og:title" content="Advanced SQLAlchemy Features You Need To Start Using"><meta data-vue-meta="1" name="og:description" content="Advanced SQLAlchemy Features You Need To Start Using"><script data-vue-meta="1" type="application/ld+json" data-vmid="post-json-ld">{"@context":"http://schema.org","@type":"BlogPosting","headline":"Advanced SQLAlchemy Features You Need To Start Using","description":"Advanced SQLAlchemy Features You Need To Start Using","keywords":"","image":"https://i.imgur.com/IUf6PIg.png","url":"https://martinheinz.dev/blog/28","datePublished":"2020-07-20T17:30:00Z","dateModified":"2020-07-20T17:30:00Z","articleBody":"<p>\nIf you are Python developer and you work with SQL databases, then SQLAlchemy is most likely a library you are familiar with. It's powerful, yet flexible toolkit for working with SQL in Python with lots of features. Some of these features like ORM and basic queries are common knowledge, but there are quite a few features you might not know about and should definitely be taking advantage of. So, let's se how to leverage things like hybrid properties, nested queries, table metadata, dialects and more!\n</p>\n\n<h2>Column Properties</h2>\n<p>\nLet's start simple. I think it's pretty common that you might want to create mapped attribute based on other columns - essentially creating computed column. The simplest example would be string concatenation:\n\n<highlight-code lang=\"python\">\nclass User(Base):\n    __tablename__ = 'user'\n    id = Column(Integer, primary_key=True)\n    firstname = Column(String(50))\n    lastname = Column(String(50))\n    fullname = column_property(firstname + \" \" + lastname)\n</highlight-code>\n\nThis is nice, but it's much more useful when we use SQL expressions to create such attribute:\n\n<highlight-code lang=\"python\">\nclass CreditCard(Base):\n    __tablename__ = 'card'\n    id = Column(Integer, primary_key=True)\n    user_id = Column(Integer, ForeignKey('user.id'), nullable=True)\n\n\nclass User(Base):\n    __tablename__ = 'user'\n    id = Column(Integer, primary_key=True)\n    firstname = Column(String(50))\n    lastname = Column(String(50))\n    fullname = column_property(firstname + \" \" + lastname)\n    credit_card = relationship(CreditCard, backref='report')\n    has_credit_card = column_property(\n        exists().where(CreditCard.user_id == id)\n    )\n\njohn = User(id=1, firstname='John', lastname='Doe')\nsession.add(john)\nsession.commit()\nprint(john.has_credit_card)\n# False\njohns_card = CreditCard(user_id=1)\nsession.add(johns_card)\nsession.commit()\nprint(john.has_credit_card)\n# True\n</highlight-code>\n\nFor the example above we added a little bit more code. We created <code class=\"inline\">CreditCard</code> class which has <i>many-to-one</i> relationship with <code class=\"inline\">User</code>. This user - on top of the columns and attributes from first example - has also column property named <code class=\"inline\">has_credit_card</code>, which is computed by checking whether credit card with users ID exists.\n</p>\n<p>\nOne thing you should be mindful of though when using this feature is that column properties won't be populated before you commit the session, which might be unexpected when working with freshly created record:\n\n<highlight-code lang=\"python\">\njohn = User(firstname='John', lastname='Doe')\nprint(john.fullname)\n# None\nsession.add(john)\nsession.commit()\n\nprint(john.fullname)\n# John Doe\n</highlight-code>\n</p>\n<h2>Hybrid Properties</h2>\n<p>\nTo follow up on the previous tip, let me also show you <i>hybrid properties</i>. They are similar to column properties in the sense that they produce <i>computed attributes</i>. Hybrid properties however, produce value from Python expression on instance level and SQL expression on class level. Little confusing? Alright, let's see an example:\n\n<highlight-code lang=\"python\">\nclass Order(Base):\n    __tablename__ = 'order'\n\n    id = Column(Integer, primary_key=True)\n    user_id = Column(Integer, ForeignKey('user.id'))\n    state = Column(String(20))  # Pending/Complete\n\n\nclass User(Base):\n    __tablename__ = 'user'\n\n    id = Column(Integer, primary_key=True)\n    orders = relationship(\"Order\")\n    name = Column(String(50))\n\n    @hybrid_property\n    def has_pending_orders(self):\n        return any(order.state == \"Pending\" for order in self.orders)  # -&gt; produces value\n\n    @has_pending_orders.expression\n    def has_pending_orders(cls):\n        return (\n            select([\n                case([(exists().where(and_(\n                    Order.user_id == cls.id,\n                    Order.state == \"Pending\", )).correlate(cls), True)], else_=False,\n                ).label(\"has_pending_order\")\n            ]).label(\"number_of_pending_orders\")\n        )  # -&gt; produces SQL expression\n\nuser = User(\n    name=\"John\",\n    orders=[\n        Order(state=\"Complete\"),\n        Order(state=\"Pending\"),\n    ]\n)\n\nprint(user.has_pending_orders)  # evaluate as Python expression\n# True\nuser = session.query(User).filter(User.has_pending_orders).scalar()  # evaluate as SQL expression (Filter)\n# SELECT * FROM user\n# WHERE (\n#   SELECT CASE WHEN (EXISTS (\n#       SELECT *\n#       FROM order\n#       WHERE order.user_id = user.id AND order.state = 'Pending'\n#   )) THEN 1 ELSE 0 END AS has_pending_order)\n</highlight-code>\n\nTo show off the capabilities of <code class=\"inline\">hybrid_property</code>, we implement simple relationship between <code class=\"inline\">User</code> and <code class=\"inline\">Order</code>, where each user has list of orders which have <code class=\"inline\">.state</code> - in this case either <i>Pending</i> or <i>Complete</i>. Now, if we want to find out whether user has any <i>Pending</i> orders, we need to think of 2 cases - If we are working with rows that were already loaded into Python objects, then we can just use Python expression and produce Python value (<code class=\"inline\">has_pending_orders(self)</code>). If we are on the other hand querying this information directly from database, we can't use Python expression as database engine won't understand it. Therefore, for this case (<code class=\"inline\">has_pending_orders(cls)</code>) we write SQL expression, that can be ran against the database.\n</p>\n<p>\nAs a side note - if your expression is same for both Python and SQL evaluation, then you can omit the second function decorated with <code class=\"inline\">.expression</code> and SQLAlchemy will use the first one for both cases.\n</p>\n<h2>Mixins</h2>\n<p>\nOne of my favourite features are <i>Mixin</i> classes. <i>Mixins</i> aren't something specific only to SQLAlchemy, but they are especially useful in conjunction with ORM models. Quite often you might run into situation, where you have multiple classes (models) that require same attribute or same <code class=\"inline\">classmethod</code>. One such example is <code class=\"inline\">User</code> model below:\n\n<highlight-code lang=\"python\">\nclass MixinAsDict:\n    def as_dict(self):\n        return {c.name: getattr(self, c.name) for c in self.__table__.columns}\n\nclass MixinGetByUsername:\n    username = Column(String(200), unique=True, nullable=True)\n\n    @classmethod\n    def get_by_username(cls, username):\n        return session.query(cls).filter(cls.username == username).first()\n\n\nclass User(MixinAsDict, MixinGetByUsername, Base):\n    __tablename__ = 'user'\n    id = Column(Integer, primary_key=True)\n\nuser = User(id=1, username=\"John\")\nprint(user.as_dict())\n# {'username': 'John', 'id': 1}\nsession.add(user)\nsession.commit()\n\njohn = User.get_by_username(\"John\")\nprint(f\"User: {john.username} with ID: {john.id}\")\n# User: John with ID: 1\n</highlight-code>\n\nIn this example we have 2 <i>Mixin</i> classes from which the <code class=\"inline\">User</code> model inherits. First of them - <code class=\"inline\">MixinAsDict</code> provides method <code class=\"inline\">as_dict(self)</code>, that can be used to get <code class=\"inline\">dict</code> representation of the model. The other one <code class=\"inline\">MixinGetByUsername</code> provides both <code class=\"inline\">username</code> column as well as static method for querying users by their username.\n</p>\n<p>\nDefining these functions as <i>Mixins</i> allows us to make them reusable and add them to other models without copy-pasting same code everywhere.\n</p>\n<p>\nIf you don't want to write all the <i>Mixins</i> yourself, then you can take a look at <a href=\"https://github.com/absent1706/sqlalchemy-mixins\">https://github.com/absent1706/sqlalchemy-mixins</a> which is a collection of common SQLAlchemy <i>Mixins</i>.\n</p>\n<h2>Working with Metadata</h2>\n<p>\nSometimes you might need to access table column names, check constraints on the table or maybe check if columns is nullable. All of this can be done with <code class=\"inline\">MetaData()</code> class:\n\n<highlight-code lang=\"python\">\nclass Address(Base):\n    __tablename__ = 'address'\n    id = Column(Integer, primary_key=True)\n    user_id = Column(Integer, ForeignKey('user.id'), nullable=True)\n    street = Column(String(50))\n\nclass User(Base):\n    __tablename__ = 'user'\n    id = Column(Integer, primary_key=True)\n    firstname = Column(String(50))\n    lastname = Column(String(50))\n    address = relationship(Address, backref='report')\n\nBase.metadata.create_all(engine)\n\nmeta = Base.metadata  # Metadata()\n\nfor t in meta.sorted_tables:\n    print(t.name)\n\n# user\n# address\n\nprint(meta.tables[\"user\"].c)\n# ['user.id', 'user.firstname', 'user.lastname']\nprint(meta.tables[\"user\"].c[\"lastname\"].type)\n# VARCHAR(50)\nprint(meta.tables[\"user\"].c[\"lastname\"].nullable)\n# True\nprint(meta.tables[\"address\"].foreign_keys)\n# {ForeignKey('user.id')}\nprint(meta.tables[\"address\"].primary_key)\n# PrimaryKeyConstraint(Column('id', Integer(), table=&lt;address&gt;, primary_key=True, nullable=False))\n</highlight-code>\n\nThe important part here are the <code class=\"inline\">print</code> statements at bottom of code snippet. Each of them demonstrates some of the things you can access through the metadata object. This includes table names, columns names, column type, foreign and primary keys as well as other constraints.\n</p>\n<h2>Configuring Tables</h2>\n<p>\nSome of your database tables might require a bit more extensive initial setup. For example - you might want to include a few check constraints, indexes or specify different schema:\n\n<highlight-code lang=\"python\">\nclass Card(Base):\n    __tablename__ = 'card'\n    __table_args__ = (\n        CheckConstraint(\"created &lt; valid_until\", name=\"validity_check\"),\n        CheckConstraint(\"card_type ~* '^(debit|credit){1}$''\", name=\"type_check\"),\n        Index(\"index\", \"id\"),\n        ForeignKeyConstraint(['id'], ['remote_table.id']),\n        {'extend_existing': True, \"schema\": \"default\"},\n    )\n\n    id = Column(Integer, primary_key=True)\n    created = Column(Date)\n    valid_until = Column(Date)\n    card_type = Column(String(50))\n</highlight-code>\n\nAll of these things can be configured using <code class=\"inline\">__table_args__</code> class attribute. Here, we setup 2 <i>check constraints</i>, 1 index for ID column and foreign key constraint. We also turn on automatic table extensions, which means that if we add columns to this table after it was created, then it will be automatically added. Lastly, we also specify to which schema this table belongs to.\n</p>\n<h2>Using Custom Dialects</h2>\n<p>\nEvery database engine has some custom features, which you might want to make use of. For me - as a PostgreSQL user - I would like to use some of the custom column types that PostgreSQL has. So how would one use those with SQLAlchemy?\n\n<highlight-code lang=\"python\">\nfrom uuid import uuid4\nfrom sqlalchemy.dialects.postgresql import UUID, INT4RANGE, NUMRANGE, JSON\n\nengine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/testdb', echo=True)\n\nclass Example(Base):\n    __tablename__ = 'example'\n\n    id = Column(Integer, primary_key=True)\n    uuid = Column(UUID(as_uuid=True), unique=True, nullable=False, default=uuid4)\n    int_range = Column(INT4RANGE)\n    num_range = Column(NUMRANGE)\n    pg_json = Column(JSON)\n    pg_array = Column(postgresql.ARRAY(Integer), server_default='{}')\n\n\nfrom psycopg2.extras import NumericRange\n\nexample = Example(\n    uuid=uuid4(),\n    int_range=NumericRange(1, 3),\n    num_range=NumericRange(1, 3),\n    pg_json={\"key\": \"value\"},\n    pg_array=[1, 5, 7, 24, 74, 8],\n)\n\nprint(session.query(Example).filter(Example.pg_array.contains([5])).scalar())\n# SELECT * FROM example WHERE example.pg_array @&gt; [5]\n\n# &lt;__main__.Example object at 0x7f2d600a4070&gt;  # Object we previously inserted\n\nprint(session.query(Example).filter(Example.pg_json[\"key\"].astext == \"value\").scalar())\n# SELECT *\n# FROM example\n# WHERE (example.pg_json -&gt;&gt; 'key' = 'value'\n\n# &lt;__main__.Example object at 0x7f04dee05070&gt;  # Object we previously inserted\n</highlight-code>\n\nThe code above shows one <code class=\"inline\">Example</code> table that has PostgreSQL <code class=\"inline\">UUID</code>, <code class=\"inline\">INT4RANGE</code>, <code class=\"inline\">NUMRANGE</code>, <code class=\"inline\">JSON</code> and <code class=\"inline\">ARRAY</code> columns. All of these and <a href=\"https://docs.sqlalchemy.org/en/13/dialects/postgresql.html\">more</a> can be imported from <code class=\"inline\">sqlalchemy.dialects.postgresql</code>.\n</p>\n<p>\nCreating rows that include values of these types is pretty self-explanatory. When it comes to querying them though, you will need to use the dialect and type specific comparators as shown above with PostgreSQL <code class=\"inline\">ARRAY</code> type and <code class=\"inline\">.contains</code> comparator.\n</p>\n<p>\nFor other types like <code class=\"inline\">JSON</code> you might be able to get away with just comparing them as text (using <code class=\"inline\">.astext</code>).\n</p>\n<p>\nTo make your life easier when creating these queries, I recommend setting <code class=\"inline\">echo=True</code> when creating engine, which will make SQLAchemy print all SQL queries into console, so that you can check whether your code actually produces correct queries.\n</p>\n<p>\nAll of the dialects, their types and comparators are documented at <a href=\"https://docs.sqlalchemy.org/en/13/dialects/\">https://docs.sqlalchemy.org/en/13/dialects/</a>.\n</p>\n<h2>Full-text Search with PostgreSQL</h2>\n<p>\nWhile on the topic of PostgreSQL features. What about the full-text search with <code class=\"inline\">tsqeury</code> and <code class=\"inline\">tsvector</code>? We can do that with SQLAchemy too:\n\n<highlight-code lang=\"python\">\nclass MixinSearch:\n\n    @classmethod\n    def fulltext_search(cls, session, search_string, field):\n        return session.query(cls). \\\n            filter(func.to_tsvector('english', getattr(cls, field)).match(search_string, postgresql_regconfig='english')).all()\n\nclass Book(MixinSearch, Base):\n    __tablename__ = 'book'\n\n    id = Column(Integer, primary_key=True)\n    title = Column(String(100))\n    body = Column(Text)\n\nbook = Book(\n    title=\"The Catcher in the Rye\",\n    body=\"\"\"First page of the book...\"\"\"\n)\n\nsuccess = Book.fulltext_search(session, \"David & Copperfield\", \"body\")\n# SELECT *\n# FROM book\n# WHERE to_tsvector(english, book.body) @@ to_tsquery('english','David & Copperfield')\nprint(success)\n# [&lt;__main__.Book object at 0x7fdac5e44520&gt;]\nfail = Book.fulltext_search(session, \"cat & dog\", \"body\")\n# SELECT *\n# FROM book\n# WHERE to_tsvector(english, book.body) @@ to_tsquery('english', 'cat & dog')\nprint(fail)\n# []\n</highlight-code>\n\nOnce again we create <i>Mixin</i> class for full-text search, as this is something that a lot of models can use. This <i>Mixin</i> has single static method, which takes search string and column to search in (<code class=\"inline\">field</code>). To do the actual search we use <code class=\"inline\">func.to_tsvector</code> to which we pass language and reference to tables column. On that, we chain call to <code class=\"inline\">.match</code> function which really is a call to <code class=\"inline\">to_tsquery</code> in PostgreSQL and we give it search string and search configuration as arguments.\n</p>\n<p>\nFrom the generated SQL we can see that the Python code really produces correct SQL queries.\n</p>\n<h2>Tracking Last Update on Rows</h2>\n<p>\nCreating <code class=\"inline\">created_at</code> or <code class=\"inline\">updated_at</code> column is pretty common practice. This can be done very simply with SQLAlchemy:\n\n<highlight-code lang=\"python\">\nclass Example(Base):\n    __tablename__ = 'example'\n\n    id = Column(Integer, primary_key=True)\n    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())\n    data = Column(String(100))\n\n\nexample = Example(\n    data=\"Some data...\"\n)\n\nrow = session.query(Example).scalar()\nprint(row.updated_at)\n# 10:13:14.001813+00:00\n\ntime.sleep(...)\nrow.data = \"Some new data...\"\nsession.add(row)\nsession.commit()\n\nrow = session.query(Example).scalar()\nprint(row.updated_at)\n# 10:13:16.590945+00:00\n</highlight-code>\n\nFor <code class=\"inline\">updated_at</code> you just need to set <code class=\"inline\">onupdate</code> to <code class=\"inline\">func.now()</code> which will make it so that every time the row is updated, this column will be set to current timestamp. As for the <code class=\"inline\">created_at</code> column, you can omit the <code class=\"inline\">onupdate</code> argument and instead use <code class=\"inline\">server_default</code> which sets the function that is called when row is created.\n</p>\n<h2>Self-Referencing Tables</h2>\n<p>\nIt's not uncommon to have recursive/self-referential relations in database - whether it's <i>manager -&gt; employee</i> relationship, tree structures or some materialized path. This tip shows how you can setup this kind of relationship using SQLAlchemy:\n\n<highlight-code lang=\"python\">\nclass Node(Base):\n    __tablename__ = 'node'\n    id = Column(Integer, primary_key=True)\n    parent_id = Column(Integer, ForeignKey('node.id'))\n    data = Column(String(50))\n    children = relationship(\"Node\",\n                            backref=backref('parent', remote_side=[id])\n                            )\n\n    def __str__(self, level=0):\n        ret = f\"{'    ' * level} {repr(self.data)} \\n\"\n        for child in self.children:\n            ret += child.__str__(level + 1)\n        return ret\n\n    def __repr__(self):\n        return self.data\n\n\nnode = Node(\n    data=\"Node 1\",\n    children=[\n        Node(data=\"Node 2\"),\n        Node(\n            data=\"Node 3\",\n            children=[\n                Node(data=\"Node 5\")\n            ]\n        ),\n        Node(data=\"Node 4\"),\n    ]\n)\nrows = session.query(Node).all()\nprint(rows[0])\n# 'Node 1'\n#     'Node 2'\n#     'Node 3'\n#         'Node 5'\n#     'Node 4'\nprint(rows[2])\n# 'Node 3'\n#     'Node 5'\n</highlight-code>\n\nFor this example we use tree structure created using <code class=\"inline\">Node</code> records. Each node has some <code class=\"inline\">data</code>, reference to its parent and list of its children. As a convenience method we also include <code class=\"inline\">__str__</code> and <code class=\"inline\">__repr__</code> to help us visualize the tree little better.\n</p>\n<p>\nIf you are fine with normal <i>one-to-many</i> relationship, then you can do it the same way as for any non-self-referential relationship. To make it work for <i>bi-directional</i> relationships however, you need to also include the <code class=\"inline\">backref</code> with <code class=\"inline\">remote_side=[id]</code> as shown above.\n</p>\n<h2>Binding Multiple Databases with Flask</h2>\n<p>\nLast one is for all the <i>Flask</i> users. If you ever need to connect to multiple databases - for example because of multiple geopgraphies or multiple data sources - then you can use <code class=\"inline\">SQLALCHEMY_BINDS</code> to specify extra database binds:\n\n<highlight-code lang=\"python\">\n# Config\nSQLALCHEMY_DATABASE_URI = 'postgres+psycopg2://localhost/emea'  # Europe, the Middle East and Africa\nSQLALCHEMY_BINDS = {\n    'emea':     'postgres+psycopg2://localhost/emea',  # Europe, the Middle East and Africa\n    'ap':       'mysqldb://localhost/ap',              # Asia Pacific\n    'la':       'postgres+psycopg2://localhost/la',    # Latin America\n}\n\n# Models\nclass User(db.Model):\n    __bind_key__ = 'emea'  # Declare to which database the model belongs to\n    id = db.Column(db.Integer, primary_key=True)\n    username = db.Column(db.String(80), unique=True)\n</highlight-code>\n\nIn the code snippet above we configure default database by setting <code class=\"inline\">SQLALCHEMY_DATABASE_URI</code> and alternative binds in <code class=\"inline\">SQLALCHEMY_BINDS</code>. With this configuration, all the above databases will be available to us. Next, we set <code class=\"inline\">__bind_key__</code> of a table to refer to one of the binds, so that whenever we interact with this particular table, SQLAlchemy will know which database to connect to.\n</p>\n<p>\nIf you however need to connect to multiple DBs with same tables/schema, you can use multiple engines and sessions - one for each database and switch between them as as you wish, like so:\n\n<highlight-code lang=\"python\">\nengine_emea   = create_engine(...)\nengine_ap     = create_engine(...)\nengine_la     = create_engine(...)\n\nsession_emea  = sessionmaker(bind=engine_emea)\nsession_ap    = sessionmaker(bind=engine_ap)\nsession_la    = sessionmaker(bind=engine_la)\n</highlight-code>\n</p>\n<h2>Conclusion</h2>\n<p>\nHopefully at least few of these tips and tricks shown here will be useful to you and will make your life just a little bit easier next time you need work with SQLAlchemy. This article is definitely not exhaustive list of all the cool things you can do with SQLAlchemy and you can find bunch of useful things just by scrolling through <a href=\"SQLAlchemy API reference\">https://docs.sqlalchemy.org/en/13/core/index.html</a>.\n</p>","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Martin Heinz","url":"https://martinheinz.dev"},"publisher":{"@type":"Organization","name":"Martin Heinz","url":"https://martinheinz.dev","logo":{"@type":"ImageObject","url":"https://i.imgur.com/IUf6PIg.png","width":"32","height":"32"}}}</script></head><body><noscript><strong>We're sorry but frontend doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"><div class="v-spinner" id="spinner" style="display: none;"><div class="v-clip" style="height: 100px; width: 100px; border-width: 2px; border-style: solid; border-color: rgb(43, 188, 138) rgb(43, 188, 138) transparent; border-radius: 100%; background: transparent;"></div></div><div id="app" style=""><div id="header-post"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="menu-icon" href="#" class="svg-inline--fa fa-bars fa-w-14 fa-lg"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" class=""></path></svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="menu-icon-tablet" href="#" class="svg-inline--fa fa-bars fa-w-14 fa-lg"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" class=""></path></svg><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="top-icon-tablet" href="#" class="svg-inline--fa fa-bars fa-w-14 fa-lg" style="display: none;"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" class=""></path></svg><span id="menu" style="visibility: visible; display: none;"><span id="nav"><ul><a href="https://martinheinz.dev/" class="router-link-active">Home</a><a href="https://martinheinz.dev/contact" class="">Contact</a><a href="https://martinheinz.dev/subscribe" class="">Subscribe</a></ul></span><br><span id="actions"><a id="top" href="https://martinheinz.dev/blog/28#"></a><ul><li><a href="https://martinheinz.dev/blog/27" class=""><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" href="/blog/27" class="svg-inline--fa fa-chevron-left fa-w-10 icon-inactive"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z" class=""></path></svg></a></li><li><a href="https://martinheinz.dev/blog/29" class=""><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" href="/blog/29" class="svg-inline--fa fa-chevron-right fa-w-10 icon-inactive"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" class=""></path></svg></a></li><li><a href="https://martinheinz.dev/blog/28#" id="top_icon" class="icon-inactive"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-up fa-w-14"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z" class=""></path></svg></a></li><li><a href="https://martinheinz.dev/rss"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-rss fa-w-14 icon-inactive"><path fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z" class=""></path></svg></a></li><li><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" href="#" class="svg-inline--fa fa-share-alt fa-w-14 icon-inactive"><path fill="currentColor" d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z" class=""></path></svg></li></ul><span class="info" style="display: none;">Previous post</span><span class="info" style="display: none;">Next post</span><span class="info" style="display: none;">Back to top</span><span class="info" style="display: none;">RSS feed</span><span class="info" style="display: none;">Share post</span></span><br><div id="share" style="visibility: visible; display: none;"><ul class="networks"><li><span tabindex="0" data-link="#share-facebook"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-facebook fa-w-16"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" class=""></path></svg></span></li><li><span tabindex="0" data-link="#share-linkedin"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-linkedin fa-w-14"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" class=""></path></svg></span></li><li><span tabindex="0" data-link="#share-reddit"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="reddit" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-reddit fa-w-16"><path fill="currentColor" d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z" class=""></path></svg></span></li><li><span tabindex="0" data-link="#share-twitter"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-twitter fa-w-16"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" class=""></path></svg></span></li><li><span tabindex="0" data-link="#share-vk"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="vk" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-vk fa-w-18"><path fill="currentColor" d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z" class=""></path></svg></span></li><li><span tabindex="0" data-link="#share-weibo"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="weibo" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-weibo fa-w-16"><path fill="currentColor" d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z" class=""></path></svg></span></li><li><span tabindex="0" data-link="#share-whatsapp"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-whatsapp fa-w-14"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" class=""></path></svg></span></li></ul></div><div id="toc"><a href="https://martinheinz.dev/blog/28#"><div class="toc-level-1"></div></a></div></span></div><div class="content"><header><h1 itemprop="name headline" class="posttitle">Advanced SQLAlchemy Features You Need To Start Using</h1><div class="meta"><span itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person" class="author"><span itemprop="name">Martin</span></span><div class="postdate"><time itemprop="datePublished" datetime="2020-07-20T17:30:00Z">Jul 20, 2020</time></div><div class="article-tag"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="tag" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-tag fa-w-16"><path fill="currentColor" d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z" class=""></path></svg><a href="https://martinheinz.dev/tags/undefined/" class="tag-link">Python</a><a href="https://martinheinz.dev/tags/undefined/" class="tag-link">SQL</a><a href="https://martinheinz.dev/tags/undefined/" class="tag-link">SQLAlchemy</a></div></div></header><div><article><div class="content"><div><p>
+If you are Python developer and you work with SQL databases, then SQLAlchemy is most likely a library you are familiar with. It's powerful, yet flexible toolkit for working with SQL in Python with lots of features. Some of these features like ORM and basic queries are common knowledge, but there are quite a few features you might not know about and should definitely be taking advantage of. So, let's se how to leverage things like hybrid properties, nested queries, table metadata, dialects and more!
+</p> <h2>Column Properties</h2> <p>
+Let's start simple. I think it's pretty common that you might want to create mapped attribute based on other columns - essentially creating computed column. The simplest example would be string concatenation:
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'user'</span>
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    firstname = Column(String(<span class="hljs-number">50</span>))
+    lastname = Column(String(<span class="hljs-number">50</span>))
+    fullname = column_property(firstname + <span class="hljs-string">" "</span> + lastname)</code></pre>
+
+This is nice, but it's much more useful when we use SQL expressions to create such attribute:
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreditCard</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'card'</span>
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    user_id = Column(Integer, ForeignKey(<span class="hljs-string">'user.id'</span>), nullable=<span class="hljs-literal">True</span>)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'user'</span>
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    firstname = Column(String(<span class="hljs-number">50</span>))
+    lastname = Column(String(<span class="hljs-number">50</span>))
+    fullname = column_property(firstname + <span class="hljs-string">" "</span> + lastname)
+    credit_card = relationship(CreditCard, backref=<span class="hljs-string">'report'</span>)
+    has_credit_card = column_property(
+        exists().where(CreditCard.user_id == id)
+    )
+
+john = User(id=<span class="hljs-number">1</span>, firstname=<span class="hljs-string">'John'</span>, lastname=<span class="hljs-string">'Doe'</span>)
+session.add(john)
+session.commit()
+print(john.has_credit_card)
+<span class="hljs-comment"># False</span>
+johns_card = CreditCard(user_id=<span class="hljs-number">1</span>)
+session.add(johns_card)
+session.commit()
+print(john.has_credit_card)
+<span class="hljs-comment"># True</span></code></pre>
+
+For the example above we added a little bit more code. We created <code class="inline">CreditCard</code> class which has <i>many-to-one</i> relationship with <code class="inline">User</code>. This user - on top of the columns and attributes from first example - has also column property named <code class="inline">has_credit_card</code>, which is computed by checking whether credit card with users ID exists.
+</p> <p>
+One thing you should be mindful of though when using this feature is that column properties won't be populated before you commit the session, which might be unexpected when working with freshly created record:
+
+<pre><code class="hljs python">john = User(firstname=<span class="hljs-string">'John'</span>, lastname=<span class="hljs-string">'Doe'</span>)
+print(john.fullname)
+<span class="hljs-comment"># None</span>
+session.add(john)
+session.commit()
+
+print(john.fullname)
+<span class="hljs-comment"># John Doe</span></code></pre></p> <h2>Hybrid Properties</h2> <p>
+To follow up on the previous tip, let me also show you <i>hybrid properties</i>. They are similar to column properties in the sense that they produce <i>computed attributes</i>. Hybrid properties however, produce value from Python expression on instance level and SQL expression on class level. Little confusing? Alright, let's see an example:
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Order</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'order'</span>
+
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    user_id = Column(Integer, ForeignKey(<span class="hljs-string">'user.id'</span>))
+    state = Column(String(<span class="hljs-number">20</span>))  <span class="hljs-comment"># Pending/Complete</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'user'</span>
+
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    orders = relationship(<span class="hljs-string">"Order"</span>)
+    name = Column(String(<span class="hljs-number">50</span>))
+
+<span class="hljs-meta">    @hybrid_property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">has_pending_orders</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> any(order.state == <span class="hljs-string">"Pending"</span> <span class="hljs-keyword">for</span> order <span class="hljs-keyword">in</span> self.orders)  <span class="hljs-comment"># -&gt; produces value</span>
+
+<span class="hljs-meta">    @has_pending_orders.expression</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">has_pending_orders</span><span class="hljs-params">(cls)</span>:</span>
+        <span class="hljs-keyword">return</span> (
+            select([
+                case([(exists().where(and_(
+                    Order.user_id == cls.id,
+                    Order.state == <span class="hljs-string">"Pending"</span>, )).correlate(cls), <span class="hljs-literal">True</span>)], else_=<span class="hljs-literal">False</span>,
+                ).label(<span class="hljs-string">"has_pending_order"</span>)
+            ]).label(<span class="hljs-string">"number_of_pending_orders"</span>)
+        )  <span class="hljs-comment"># -&gt; produces SQL expression</span>
+
+user = User(
+    name=<span class="hljs-string">"John"</span>,
+    orders=[
+        Order(state=<span class="hljs-string">"Complete"</span>),
+        Order(state=<span class="hljs-string">"Pending"</span>),
+    ]
+)
+
+print(user.has_pending_orders)  <span class="hljs-comment"># evaluate as Python expression</span>
+<span class="hljs-comment"># True</span>
+user = session.query(User).filter(User.has_pending_orders).scalar()  <span class="hljs-comment"># evaluate as SQL expression (Filter)</span>
+<span class="hljs-comment"># SELECT * FROM user</span>
+<span class="hljs-comment"># WHERE (</span>
+<span class="hljs-comment">#   SELECT CASE WHEN (EXISTS (</span>
+<span class="hljs-comment">#       SELECT *</span>
+<span class="hljs-comment">#       FROM order</span>
+<span class="hljs-comment">#       WHERE order.user_id = user.id AND order.state = 'Pending'</span>
+<span class="hljs-comment">#   )) THEN 1 ELSE 0 END AS has_pending_order)</span></code></pre>
+
+To show off the capabilities of <code class="inline">hybrid_property</code>, we implement simple relationship between <code class="inline">User</code> and <code class="inline">Order</code>, where each user has list of orders which have <code class="inline">.state</code> - in this case either <i>Pending</i> or <i>Complete</i>. Now, if we want to find out whether user has any <i>Pending</i> orders, we need to think of 2 cases - If we are working with rows that were already loaded into Python objects, then we can just use Python expression and produce Python value (<code class="inline">has_pending_orders(self)</code>). If we are on the other hand querying this information directly from database, we can't use Python expression as database engine won't understand it. Therefore, for this case (<code class="inline">has_pending_orders(cls)</code>) we write SQL expression, that can be ran against the database.
+</p> <p>
+As a side note - if your expression is same for both Python and SQL evaluation, then you can omit the second function decorated with <code class="inline">.expression</code> and SQLAlchemy will use the first one for both cases.
+</p> <h2>Mixins</h2> <p>
+One of my favourite features are <i>Mixin</i> classes. <i>Mixins</i> aren't something specific only to SQLAlchemy, but they are especially useful in conjunction with ORM models. Quite often you might run into situation, where you have multiple classes (models) that require same attribute or same <code class="inline">classmethod</code>. One such example is <code class="inline">User</code> model below:
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MixinAsDict</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">as_dict</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> {c.name: getattr(self, c.name) <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> self.__table__.columns}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MixinGetByUsername</span>:</span>
+    username = Column(String(<span class="hljs-number">200</span>), unique=<span class="hljs-literal">True</span>, nullable=<span class="hljs-literal">True</span>)
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_by_username</span><span class="hljs-params">(cls, username)</span>:</span>
+        <span class="hljs-keyword">return</span> session.query(cls).filter(cls.username == username).first()
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(MixinAsDict, MixinGetByUsername, Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'user'</span>
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+
+user = User(id=<span class="hljs-number">1</span>, username=<span class="hljs-string">"John"</span>)
+print(user.as_dict())
+<span class="hljs-comment"># {'username': 'John', 'id': 1}</span>
+session.add(user)
+session.commit()
+
+john = User.get_by_username(<span class="hljs-string">"John"</span>)
+print(<span class="hljs-string">f"User: <span class="hljs-subst">{john.username}</span> with ID: <span class="hljs-subst">{john.id}</span>"</span>)
+<span class="hljs-comment"># User: John with ID: 1</span></code></pre>
+
+In this example we have 2 <i>Mixin</i> classes from which the <code class="inline">User</code> model inherits. First of them - <code class="inline">MixinAsDict</code> provides method <code class="inline">as_dict(self)</code>, that can be used to get <code class="inline">dict</code> representation of the model. The other one <code class="inline">MixinGetByUsername</code> provides both <code class="inline">username</code> column as well as static method for querying users by their username.
+</p> <p>
+Defining these functions as <i>Mixins</i> allows us to make them reusable and add them to other models without copy-pasting same code everywhere.
+</p> <p>
+If you don't want to write all the <i>Mixins</i> yourself, then you can take a look at <a href="https://github.com/absent1706/sqlalchemy-mixins">https://github.com/absent1706/sqlalchemy-mixins</a> which is a collection of common SQLAlchemy <i>Mixins</i>.
+</p> <h2>Working with Metadata</h2> <p>
+Sometimes you might need to access table column names, check constraints on the table or maybe check if columns is nullable. All of this can be done with <code class="inline">MetaData()</code> class:
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Address</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'address'</span>
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    user_id = Column(Integer, ForeignKey(<span class="hljs-string">'user.id'</span>), nullable=<span class="hljs-literal">True</span>)
+    street = Column(String(<span class="hljs-number">50</span>))
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'user'</span>
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    firstname = Column(String(<span class="hljs-number">50</span>))
+    lastname = Column(String(<span class="hljs-number">50</span>))
+    address = relationship(Address, backref=<span class="hljs-string">'report'</span>)
+
+Base.metadata.create_all(engine)
+
+meta = Base.metadata  <span class="hljs-comment"># Metadata()</span>
+
+<span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> meta.sorted_tables:
+    print(t.name)
+
+<span class="hljs-comment"># user</span>
+<span class="hljs-comment"># address</span>
+
+print(meta.tables[<span class="hljs-string">"user"</span>].c)
+<span class="hljs-comment"># ['user.id', 'user.firstname', 'user.lastname']</span>
+print(meta.tables[<span class="hljs-string">"user"</span>].c[<span class="hljs-string">"lastname"</span>].type)
+<span class="hljs-comment"># VARCHAR(50)</span>
+print(meta.tables[<span class="hljs-string">"user"</span>].c[<span class="hljs-string">"lastname"</span>].nullable)
+<span class="hljs-comment"># True</span>
+print(meta.tables[<span class="hljs-string">"address"</span>].foreign_keys)
+<span class="hljs-comment"># {ForeignKey('user.id')}</span>
+print(meta.tables[<span class="hljs-string">"address"</span>].primary_key)
+<span class="hljs-comment"># PrimaryKeyConstraint(Column('id', Integer(), table=&lt;address&gt;, primary_key=True, nullable=False))</span></code></pre>
+
+The important part here are the <code class="inline">print</code> statements at bottom of code snippet. Each of them demonstrates some of the things you can access through the metadata object. This includes table names, columns names, column type, foreign and primary keys as well as other constraints.
+</p> <h2>Configuring Tables</h2> <p>
+Some of your database tables might require a bit more extensive initial setup. For example - you might want to include a few check constraints, indexes or specify different schema:
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Card</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'card'</span>
+    __table_args__ = (
+        CheckConstraint(<span class="hljs-string">"created &lt; valid_until"</span>, name=<span class="hljs-string">"validity_check"</span>),
+        CheckConstraint(<span class="hljs-string">"card_type ~* '^(debit|credit){1}$''"</span>, name=<span class="hljs-string">"type_check"</span>),
+        Index(<span class="hljs-string">"index"</span>, <span class="hljs-string">"id"</span>),
+        ForeignKeyConstraint([<span class="hljs-string">'id'</span>], [<span class="hljs-string">'remote_table.id'</span>]),
+        {<span class="hljs-string">'extend_existing'</span>: <span class="hljs-literal">True</span>, <span class="hljs-string">"schema"</span>: <span class="hljs-string">"default"</span>},
+    )
+
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    created = Column(Date)
+    valid_until = Column(Date)
+    card_type = Column(String(<span class="hljs-number">50</span>))</code></pre>
+
+All of these things can be configured using <code class="inline">__table_args__</code> class attribute. Here, we setup 2 <i>check constraints</i>, 1 index for ID column and foreign key constraint. We also turn on automatic table extensions, which means that if we add columns to this table after it was created, then it will be automatically added. Lastly, we also specify to which schema this table belongs to.
+</p> <h2>Using Custom Dialects</h2> <p>
+Every database engine has some custom features, which you might want to make use of. For me - as a PostgreSQL user - I would like to use some of the custom column types that PostgreSQL has. So how would one use those with SQLAlchemy?
+
+<pre><code class="hljs python"><span class="hljs-keyword">from</span> uuid <span class="hljs-keyword">import</span> uuid4
+<span class="hljs-keyword">from</span> sqlalchemy.dialects.postgresql <span class="hljs-keyword">import</span> UUID, INT4RANGE, NUMRANGE, JSON
+
+engine = create_engine(<span class="hljs-string">'postgresql+psycopg2://postgres:postgres@localhost/testdb'</span>, echo=<span class="hljs-literal">True</span>)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'example'</span>
+
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    uuid = Column(UUID(as_uuid=<span class="hljs-literal">True</span>), unique=<span class="hljs-literal">True</span>, nullable=<span class="hljs-literal">False</span>, default=uuid4)
+    int_range = Column(INT4RANGE)
+    num_range = Column(NUMRANGE)
+    pg_json = Column(JSON)
+    pg_array = Column(postgresql.ARRAY(Integer), server_default=<span class="hljs-string">'{}'</span>)
+
+
+<span class="hljs-keyword">from</span> psycopg2.extras <span class="hljs-keyword">import</span> NumericRange
+
+example = Example(
+    uuid=uuid4(),
+    int_range=NumericRange(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>),
+    num_range=NumericRange(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>),
+    pg_json={<span class="hljs-string">"key"</span>: <span class="hljs-string">"value"</span>},
+    pg_array=[<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">24</span>, <span class="hljs-number">74</span>, <span class="hljs-number">8</span>],
+)
+
+print(session.query(Example).filter(Example.pg_array.contains([<span class="hljs-number">5</span>])).scalar())
+<span class="hljs-comment"># SELECT * FROM example WHERE example.pg_array @&gt; [5]</span>
+
+<span class="hljs-comment"># &lt;__main__.Example object at 0x7f2d600a4070&gt;  # Object we previously inserted</span>
+
+print(session.query(Example).filter(Example.pg_json[<span class="hljs-string">"key"</span>].astext == <span class="hljs-string">"value"</span>).scalar())
+<span class="hljs-comment"># SELECT *</span>
+<span class="hljs-comment"># FROM example</span>
+<span class="hljs-comment"># WHERE (example.pg_json -&gt;&gt; 'key' = 'value'</span>
+
+<span class="hljs-comment"># &lt;__main__.Example object at 0x7f04dee05070&gt;  # Object we previously inserted</span></code></pre>
+
+The code above shows one <code class="inline">Example</code> table that has PostgreSQL <code class="inline">UUID</code>, <code class="inline">INT4RANGE</code>, <code class="inline">NUMRANGE</code>, <code class="inline">JSON</code> and <code class="inline">ARRAY</code> columns. All of these and <a href="https://docs.sqlalchemy.org/en/13/dialects/postgresql.html">more</a> can be imported from <code class="inline">sqlalchemy.dialects.postgresql</code>.
+</p> <p>
+Creating rows that include values of these types is pretty self-explanatory. When it comes to querying them though, you will need to use the dialect and type specific comparators as shown above with PostgreSQL <code class="inline">ARRAY</code> type and <code class="inline">.contains</code> comparator.
+</p> <p>
+For other types like <code class="inline">JSON</code> you might be able to get away with just comparing them as text (using <code class="inline">.astext</code>).
+</p> <p>
+To make your life easier when creating these queries, I recommend setting <code class="inline">echo=True</code> when creating engine, which will make SQLAchemy print all SQL queries into console, so that you can check whether your code actually produces correct queries.
+</p> <p>
+All of the dialects, their types and comparators are documented at <a href="https://docs.sqlalchemy.org/en/13/dialects/">https://docs.sqlalchemy.org/en/13/dialects/</a>.
+</p> <h2>Full-text Search with PostgreSQL</h2> <p>
+While on the topic of PostgreSQL features. What about the full-text search with <code class="inline">tsqeury</code> and <code class="inline">tsvector</code>? We can do that with SQLAchemy too:
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MixinSearch</span>:</span>
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fulltext_search</span><span class="hljs-params">(cls, session, search_string, field)</span>:</span>
+        <span class="hljs-keyword">return</span> session.query(cls). \
+            filter(func.to_tsvector(<span class="hljs-string">'english'</span>, getattr(cls, field)).match(search_string, postgresql_regconfig=<span class="hljs-string">'english'</span>)).all()
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Book</span><span class="hljs-params">(MixinSearch, Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'book'</span>
+
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    title = Column(String(<span class="hljs-number">100</span>))
+    body = Column(Text)
+
+book = Book(
+    title=<span class="hljs-string">"The Catcher in the Rye"</span>,
+    body=<span class="hljs-string">"""First page of the book..."""</span>
+)
+
+success = Book.fulltext_search(session, <span class="hljs-string">"David &amp; Copperfield"</span>, <span class="hljs-string">"body"</span>)
+<span class="hljs-comment"># SELECT *</span>
+<span class="hljs-comment"># FROM book</span>
+<span class="hljs-comment"># WHERE to_tsvector(english, book.body) @@ to_tsquery('english','David &amp; Copperfield')</span>
+print(success)
+<span class="hljs-comment"># [&lt;__main__.Book object at 0x7fdac5e44520&gt;]</span>
+fail = Book.fulltext_search(session, <span class="hljs-string">"cat &amp; dog"</span>, <span class="hljs-string">"body"</span>)
+<span class="hljs-comment"># SELECT *</span>
+<span class="hljs-comment"># FROM book</span>
+<span class="hljs-comment"># WHERE to_tsvector(english, book.body) @@ to_tsquery('english', 'cat &amp; dog')</span>
+print(fail)
+<span class="hljs-comment"># []</span></code></pre>
+
+Once again we create <i>Mixin</i> class for full-text search, as this is something that a lot of models can use. This <i>Mixin</i> has single static method, which takes search string and column to search in (<code class="inline">field</code>). To do the actual search we use <code class="inline">func.to_tsvector</code> to which we pass language and reference to tables column. On that, we chain call to <code class="inline">.match</code> function which really is a call to <code class="inline">to_tsquery</code> in PostgreSQL and we give it search string and search configuration as arguments.
+</p> <p>
+From the generated SQL we can see that the Python code really produces correct SQL queries.
+</p> <h2>Tracking Last Update on Rows</h2> <p>
+Creating <code class="inline">created_at</code> or <code class="inline">updated_at</code> column is pretty common practice. This can be done very simply with SQLAlchemy:
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'example'</span>
+
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    updated_at = Column(DateTime(timezone=<span class="hljs-literal">True</span>), server_default=func.now(), onupdate=func.now())
+    data = Column(String(<span class="hljs-number">100</span>))
+
+
+example = Example(
+    data=<span class="hljs-string">"Some data..."</span>
+)
+
+row = session.query(Example).scalar()
+print(row.updated_at)
+<span class="hljs-comment"># 10:13:14.001813+00:00</span>
+
+time.sleep(...)
+row.data = <span class="hljs-string">"Some new data..."</span>
+session.add(row)
+session.commit()
+
+row = session.query(Example).scalar()
+print(row.updated_at)
+<span class="hljs-comment"># 10:13:16.590945+00:00</span></code></pre>
+
+For <code class="inline">updated_at</code> you just need to set <code class="inline">onupdate</code> to <code class="inline">func.now()</code> which will make it so that every time the row is updated, this column will be set to current timestamp. As for the <code class="inline">created_at</code> column, you can omit the <code class="inline">onupdate</code> argument and instead use <code class="inline">server_default</code> which sets the function that is called when row is created.
+</p> <h2>Self-Referencing Tables</h2> <p>
+It's not uncommon to have recursive/self-referential relations in database - whether it's <i>manager -&gt; employee</i> relationship, tree structures or some materialized path. This tip shows how you can setup this kind of relationship using SQLAlchemy:
+
+<pre><code class="hljs python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span><span class="hljs-params">(Base)</span>:</span>
+    __tablename__ = <span class="hljs-string">'node'</span>
+    id = Column(Integer, primary_key=<span class="hljs-literal">True</span>)
+    parent_id = Column(Integer, ForeignKey(<span class="hljs-string">'node.id'</span>))
+    data = Column(String(<span class="hljs-number">50</span>))
+    children = relationship(<span class="hljs-string">"Node"</span>,
+                            backref=backref(<span class="hljs-string">'parent'</span>, remote_side=[id])
+                            )
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self, level=<span class="hljs-number">0</span>)</span>:</span>
+        ret = <span class="hljs-string">f"<span class="hljs-subst">{<span class="hljs-string">'    '</span> * level}</span> <span class="hljs-subst">{repr(self.data)}</span> \n"</span>
+        <span class="hljs-keyword">for</span> child <span class="hljs-keyword">in</span> self.children:
+            ret += child.__str__(level + <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> ret
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.data
+
+
+node = Node(
+    data=<span class="hljs-string">"Node 1"</span>,
+    children=[
+        Node(data=<span class="hljs-string">"Node 2"</span>),
+        Node(
+            data=<span class="hljs-string">"Node 3"</span>,
+            children=[
+                Node(data=<span class="hljs-string">"Node 5"</span>)
+            ]
+        ),
+        Node(data=<span class="hljs-string">"Node 4"</span>),
+    ]
+)
+rows = session.query(Node).all()
+print(rows[<span class="hljs-number">0</span>])
+<span class="hljs-comment"># 'Node 1'</span>
+<span class="hljs-comment">#     'Node 2'</span>
+<span class="hljs-comment">#     'Node 3'</span>
+<span class="hljs-comment">#         'Node 5'</span>
+<span class="hljs-comment">#     'Node 4'</span>
+print(rows[<span class="hljs-number">2</span>])
+<span class="hljs-comment"># 'Node 3'</span>
+<span class="hljs-comment">#     'Node 5'</span></code></pre>
+
+For this example we use tree structure created using <code class="inline">Node</code> records. Each node has some <code class="inline">data</code>, reference to its parent and list of its children. As a convenience method we also include <code class="inline">__str__</code> and <code class="inline">__repr__</code> to help us visualize the tree little better.
+</p> <p>
+If you are fine with normal <i>one-to-many</i> relationship, then you can do it the same way as for any non-self-referential relationship. To make it work for <i>bi-directional</i> relationships however, you need to also include the <code class="inline">backref</code> with <code class="inline">remote_side=[id]</code> as shown above.
+</p> <h2>Binding Multiple Databases with Flask</h2> <p>
+Last one is for all the <i>Flask</i> users. If you ever need to connect to multiple databases - for example because of multiple geopgraphies or multiple data sources - then you can use <code class="inline">SQLALCHEMY_BINDS</code> to specify extra database binds:
+
+<pre><code class="hljs python"><span class="hljs-comment"># Config</span>
+SQLALCHEMY_DATABASE_URI = <span class="hljs-string">'postgres+psycopg2://localhost/emea'</span>  <span class="hljs-comment"># Europe, the Middle East and Africa</span>
+SQLALCHEMY_BINDS = {
+    <span class="hljs-string">'emea'</span>:     <span class="hljs-string">'postgres+psycopg2://localhost/emea'</span>,  <span class="hljs-comment"># Europe, the Middle East and Africa</span>
+    <span class="hljs-string">'ap'</span>:       <span class="hljs-string">'mysqldb://localhost/ap'</span>,              <span class="hljs-comment"># Asia Pacific</span>
+    <span class="hljs-string">'la'</span>:       <span class="hljs-string">'postgres+psycopg2://localhost/la'</span>,    <span class="hljs-comment"># Latin America</span>
+}
+
+<span class="hljs-comment"># Models</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span><span class="hljs-params">(db.Model)</span>:</span>
+    __bind_key__ = <span class="hljs-string">'emea'</span>  <span class="hljs-comment"># Declare to which database the model belongs to</span>
+    id = db.Column(db.Integer, primary_key=<span class="hljs-literal">True</span>)
+    username = db.Column(db.String(<span class="hljs-number">80</span>), unique=<span class="hljs-literal">True</span>)</code></pre>
+
+In the code snippet above we configure default database by setting <code class="inline">SQLALCHEMY_DATABASE_URI</code> and alternative binds in <code class="inline">SQLALCHEMY_BINDS</code>. With this configuration, all the above databases will be available to us. Next, we set <code class="inline">__bind_key__</code> of a table to refer to one of the binds, so that whenever we interact with this particular table, SQLAlchemy will know which database to connect to.
+</p> <p>
+If you however need to connect to multiple DBs with same tables/schema, you can use multiple engines and sessions - one for each database and switch between them as as you wish, like so:
+
+<pre><code class="hljs python">engine_emea   = create_engine(...)
+engine_ap     = create_engine(...)
+engine_la     = create_engine(...)
+
+session_emea  = sessionmaker(bind=engine_emea)
+session_ap    = sessionmaker(bind=engine_ap)
+session_la    = sessionmaker(bind=engine_la)</code></pre></p> <h2>Conclusion</h2> <p>
+Hopefully at least few of these tips and tricks shown here will be useful to you and will make your life just a little bit easier next time you need work with SQLAlchemy. This article is definitely not exhaustive list of all the cool things you can do with SQLAlchemy and you can find bunch of useful things just by scrolling through <a href="https://martinheinz.dev/blog/SQLAlchemy%20API%20reference">https://docs.sqlalchemy.org/en/13/core/index.html</a>.
+</p></div></div></article><div data-v-8cab8bac="" class="navbar navbar--hidden"><span data-v-8cab8bac="" class="footer-action"><a data-v-8cab8bac="" href="https://martinheinz.dev/blog/27" class=""><svg data-v-8cab8bac="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" href="/blog/27" class="svg-inline--fa fa-chevron-left fa-w-10 fa-20"><path data-v-8cab8bac="" fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z" class=""></path></svg><span data-v-8cab8bac="" class="footer-action-text">Previous</span></a></span><span data-v-8cab8bac="" class="footer-action"><a data-v-8cab8bac="" href="https://martinheinz.dev/blog/29" class=""><svg data-v-8cab8bac="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" href="/blog/29" class="svg-inline--fa fa-chevron-right fa-w-10 fa-20"><path data-v-8cab8bac="" fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" class=""></path></svg><span data-v-8cab8bac="" class="footer-action-text">Next</span></a></span><span data-v-8cab8bac="" class="footer-action"><a data-v-8cab8bac="" href="https://martinheinz.dev/subscribe" class=""><svg data-v-8cab8bac="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rss" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-rss fa-w-14 fa-17"><path data-v-8cab8bac="" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z" class=""></path></svg><span data-v-8cab8bac="" class="footer-action-text">Subscribe</span></a></span><span data-v-8cab8bac="" class="footer-action"><svg data-v-8cab8bac="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="top_icon" href="#" class="svg-inline--fa fa-chevron-up fa-w-14 fa-20"><path data-v-8cab8bac="" fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z" class=""></path></svg><span data-v-8cab8bac="" class="footer-action-text">Top</span></span></div></div><footer id="footer"><div class="footer-left"> Copyright © 2021 Martin Heinz </div><div class="footer-right"><nav><ul><li><a href="https://martinheinz.dev/" class="router-link-active">Home</a></li><li><a href="https://martinheinz.dev/contact" class="">Contact</a></li><li><a href="https://martinheinz.dev/subscribe" class="">Subscribe</a></li></ul></nav></div></footer></div></div></div><script src="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/chunk-vendors.8018a4cd.js.download"></script><script src="./Martin Heinz _ Advanced SQLAlchemy Features You Need To Start Using_files/app.2f203551.js.download"></script></body></html>
