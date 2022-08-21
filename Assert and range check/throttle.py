@@ -1,5 +1,5 @@
 # https://rednafi.github.io/reflections/apply-constraints-with-assert-in-python.html
-
+#
 def throttle(current_iter: int, throttle_after: int = -1) -> None:
     # Return early if 'throttle_after=-1'.
     if throttle_after == -1:
