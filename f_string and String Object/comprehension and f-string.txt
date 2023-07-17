@@ -1,0 +1,68 @@
+# https://towardsdev.com/a-crash-course-in-python-comprehensions-and-generators-f069c8f8ca38
+
+>>> fruits = ["apples", "bananas", "pears", "pears"]
+>>> {x.title(): fruits.count(x) for x in fruits} 
+{'Apples': 1, 'Bananas': 1, 'Pears': 2}
+
+
+>>> fruits = [("apples", "green"), ("bananas", "yellow", "curved")]
+>>> [f"{x.title()} are normally {' and '.join(y)}" for x, *y in fruits]
+['Apples are normally green', 'Bananas are normally yellow and curved']
+
+>>> {word.title() for word in fruits}
+{'Apples', 'Bananas', 'Pears'}  # 'Pears' only appears once. Nice!
+
+>>> {x.title(): fruits.count(x) for x in fruits} 
+{'Apples': 1, 'Bananas': 1, 'Pears': 2}
+
+
+>>> fruits = {"apples": "green", "bananas": "yellow", "pears": "green"}
+
+>>> {f"{k} are {v}" for k,v in fruits.items()}
+{'bananas are yellow', 'apples are green', 'pears are green'}
+
+>>> list(fruits)
+['apples', 'bananas', 'pears']  # A list of (unmodified) dictionary keys
+
+>>> [k.title() for k in fruits]                
+['Apples', 'Bananas', 'Pears']  # A list of (modified) dictionary keys
+
+>>> [v for v in fruits.values()] 
+['green', 'yellow', 'green']  # A list of dictionary values
+
+>>> {v for v in fruits.values()}  
+{'green', 'yellow'}  # A set of (unique) dictionary values
+
+
+>>> fruits = ["apples", "pears", "pears", "", None, False, 0, [], {}, ()] 
+
+>>> {x.title(): fruits.count(x) for x in fruits if x}
+{'Apples': 1, 'Pears': 2}
+
+>>> exclusions = "PEARS ORANGES MELONS".split()
+>>> {x.title() for x in fruits if x and not x.upper() in exclusions}
+{'Apples'}
+
+>>> fruits = ["apples", "pears", "pears", "", None, False, 0, [], {}, ()] 
+
+>>> {x.upper() if x else "<falsey>" for x in fruits}
+{'APPLES', '<falsey>', 'PEARS'}
+
+## Nested comprehensions
+>>> nest1 = ['egg1', 'egg2']
+>>> nest2 = ['egg3', 'egg4', 'egg5']
+>>> trees = [nest1, nest2]
+>>> trees
+[['egg1', 'egg2'], ['egg3', 'egg4', 'egg5']]
+
+>>> [x for y in trees for x in y]
+['egg1', 'egg2', 'egg3', 'egg4', 'egg5']
+
+
+>>> dog_breeds = {
+...     "Terrier": ["Paterdale", "Border"],
+...     "Other": ["Dalmation", "Poodle", "Whippet"],
+... }
+
+>>> [dog for breed in dog_breeds.values() for dog in breed]
+['Paterdale', 'Border', 'Dalmation', 'Poodle', 'Whippet']
