@@ -16,7 +16,7 @@ import logging
 file_input = pathlib.Path("requestreply.txt")
 file_output = pathlib.Path("output.txt")
 
-step_ids = []
+step_ids = set()
 
 request_tbl = {
     
@@ -29,7 +29,7 @@ try:
         for line in f_inp:
             if "<stepid>" in line:
                 step_id = line.replace("<stepid>", "").replace("</stepid>", "")
-                step_ids.append(step_id)
+                step_ids.add(step_id)
 
 except OSError as error:
         logging.error("Reading file %s failed due to: %s", file_input, error)
