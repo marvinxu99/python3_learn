@@ -1,10 +1,15 @@
 from logging_manager import LoggingManager
 
-# Create an instance of LoggingManager
-logging_manager = LoggingManager()
+# Get the Singleton instance of LoggingManager with a specified log file and rotating handler
+logman = LoggingManager(
+    # log_file=r'D:/dDev/Python/python3_learn/logger/app.log', 
+    max_bytes=1024 * 1024, 
+    backup_count=5)  # 1 MB per file, 5 backups
 
 # Get the logger for this module
-logger = logging_manager.get_logger('app.moduleA')
+logger = logman.get_logger('app.moduleA')
+logman.set_logger_level('app.moduleA', "DEBUG")
+
 
 def moduleA_function():
     logger.debug("Debug message from module A")

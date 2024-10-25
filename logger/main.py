@@ -2,12 +2,15 @@ from logging_manager import LoggingManager
 from moduleA import moduleA_function
 
 if __name__ == "__main__":
-    # Create an instance of LoggingManager and load the configuration
-    logging_manager = LoggingManager()
+    # Get the Singleton instance of LoggingManager with a specified log file and rotating handler
+    logman = LoggingManager(
+        # log_file=r'D:/dDev/Python/python3_learn/logger/app.log', 
+        max_bytes=1024 * 1024, 
+        backup_count=5)  # 1 MB per file, 5 backups
 
     # Simulate function calls
     moduleA_function()
 
     # Dynamically change the log level for moduleA
-    logging_manager.set_logger_level('app.moduleA', "ERROR")
+    logman.set_logger_level('app.moduleA', "ERROR")
     moduleA_function()  # Will only show error messages now

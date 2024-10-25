@@ -2,6 +2,7 @@ import logging
 import logging.config
 import json
 import os
+from logging.handlers import RotatingFileHandler
 
 class LoggingManager:
     """
@@ -11,14 +12,17 @@ class LoggingManager:
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
-            cls._instance = super(LoggingManager, cls).__new__(cls, *args, **kwargs)
+            cls._instance = super().__new__(cls)
         return cls._instance
 
-    def __init__(self, config_file='logging_config.json', default_level=logging.INFO):
+    def __init__(self, config_file='logging_config.json', default_level=logging.INFO, log_file='application.log', max_bytes=10485760, backup_count=5):
         # Prevent re-initialization if already initialized
         if not hasattr(self, '_initialized'):
             self.config_file = config_file
             self.default_level = default_level
+            self.log_file = log_file
+            self.max_bytes = max_bytes  # Maximum size in bytes before rotating the log file
+            self.backup_count = backup_count  # Number of backup files to keep
             self._config_loaded = False
             self._load_logging_config()
             self._initialized = True  # Mark as initialized
@@ -34,8 +38,27 @@ class LoggingManager:
             self._config_loaded = True
         else:
             print(f"Warning: Config file {self.config_file} not found. Using default configuration.")
-            logging.basicConfig(level=self.default_level, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            self._set_default_logging_config()
             self._config_loaded = True
+
+    def _set_default_logging_config(self):
+        """
+        Set a default logging configuration if the config file is not found.
+        """
+        # Create a rotating file handler
+        rotating_handler = RotatingFileHandler(
+            self.log_file, maxBytes=self.max_bytes, backupCount=self.backup_count
+        )
+
+        # Create the basic logging configuration
+        logging.basicConfig(
+            level=self.default_level,
+            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            handlers=[
+                rotating_handler,  # File handler with rotation
+                logging.StreamHandler()  # Console handler
+            ]
+        )
 
     def get_logger(self, logger_name):
         """
@@ -43,6 +66,8 @@ class LoggingManager:
         """
         if not self._config_loaded:
             raise RuntimeError("Logging configuration not loaded. Please initialize 'LoggingManager' properly.")
+        
+        # print(f"Logging to file: {self.log_file}")
         return logging.getLogger(logger_name)
 
     def set_logger_level(self, logger_name, level):
@@ -56,8 +81,7 @@ class LoggingManager:
         else:
             print(f"Invalid log level: {level}")
 
-
-# Example of how to use the Singleton LoggingManager
-# logging_manager = LoggingManager()
+# Example of how to use the Singleton LoggingManager with rotating log files
+# logging_manager = LoggingManager(log_file='app.log', max_bytes=1048576, backup_count=5)  # 1 MB per file, 5 backups
 # logger = logging_manager.get_logger("app.moduleA")
 # logger.info("This is an info message")
