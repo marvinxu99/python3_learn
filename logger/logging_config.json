@@ -1,0 +1,34 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "detailed": {
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s [in %(pathname)s:%(lineno)d]"
+        }
+    },
+    "handlers": {
+        "file_handler": {
+            "class": "logging.FileHandler",
+            "level": "DEBUG",
+            "formatter": "detailed",
+            "filename": "application.log"
+        }
+    },
+    "loggers": {
+        "": {
+            "handlers": ["file_handler"],
+            "level": "INFO",
+            "propagate": true
+        },
+        "app.moduleA": {
+            "handlers": ["file_handler"],
+            "level": "DEBUG",
+            "propagate": false
+        },
+        "app.moduleB": {
+            "handlers": ["file_handler"],
+            "level": "INFO",
+            "propagate": false
+        }
+    }
+}
