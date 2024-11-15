@@ -1,5 +1,5 @@
 import win32com.client           # pip install pywin32
-from xhtml2pdf import pisa
+import pdfkit
 import os
 from datetime import datetime, timedelta
 
@@ -11,37 +11,61 @@ os.makedirs(save_dir, exist_ok=True)
 
 
 def save_email_as_pdf(email):
+    # Generate a safe file name from the email subject and date
     subject = email.Subject.replace(":", "-").replace("\\", "").replace("/", "")
-    file_path = os.path.join(save_dir, f"{subject}.pdf")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{subject}_{timestamp}.html"
+    file_path = os.path.join(save_dir, filename)
+    #pdf_path = file_path.replace(".html", ".pdf")   
+    pdf_path = os.path.join(save_dir, f"{subject}_{timestamp}.pdf") 
+
+    # Save email as an HTML file
+    # with open(file_path, 'w', encoding='utf-8') as f:
+    #     html_body = email.HTMLBody if email.HTMLBody else f"<pre>{email.Body}</pre>"
+    #     f.write(html_body)
+
+    # # Convert HTML to PDF
+    # pdfkit.from_file(file_path, pdf_path)
+
+    # # Clean up HTML file after conversion
+    # os.remove(file_path)
 
     # Extract the HTML body of the email
-    html_body = email.HTMLBody
-    # Fallback to plain text if HTML body is not available
-    if not html_body:
-        html_body = f"<pre>{email.Body}</pre>"  # Wrap plain text in <pre> to preserve formatting
+    html_body = email.HTMLBody if email.HTMLBody else f"<pre>{email.Body}</pre>"
 
     # Create the complete HTML content with the subject at the top
     pdf_content = f"""
-    <html>
-    <head>
-        <style>
-            body {{ font-family: Arial, sans-serif; }}
-            .subject {{ font-size: 18px; font-weight: bold; margin-bottom: 20px; }}
-        </style>
-    </head>
-    <body>
-        <div class="subject">Subject: {subject}</div>
-        {html_body}
-    </body>
-    </html>
+        <html>
+        <head>
+            <style>
+                body {{ font-family: Arial, sans-serif; }}
+                .subject {{ font-size: 18px; font-weight: bold; margin-bottom: 20px; }}
+            </style>
+        </head>
+        <body>
+            <div class="subject">Subject: {subject}</div>
+            {html_body}
+        </body>
+        </html>
     """
-    
-    with open(file_path, "wb") as pdf_file:
-        pisa_status = pisa.CreatePDF(html_body, dest=pdf_file)
-        if pisa_status.err:
-            print("Error converting HTML to PDF")
-        else:
-            print(f"PDF saved to: {file_path}")
+
+    # Path to wkhtmltopdf executable
+    # path_to_wkhtmltopdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
+    # config = pdfkit.configuration(wkhtmltopdf=path_to_wkhtmltopdf)
+    # Options to suppress printer message and configure PDF output
+    # options = {
+    #     "no-pdf-compression": None,
+    #     "disable-smart-shrinking": None,
+    #     "quiet": "",  # Suppress wkhtmltopdf console output
+    # }
+    # status = pdfkit.from_string(pdf_content, pdf_path, configuration=config, options=options)
+
+    status = pdfkit.from_string(pdf_content, pdf_path)
+    print(status)
+    if status:
+        print(f"Saved PDF: {pdf_path}")
+    else:
+        print("Error converting HTML to PDF")
 
 
 def parse_sender(sender):
