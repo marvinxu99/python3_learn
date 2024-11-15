@@ -2,7 +2,7 @@ import win32com.client           # pip install pywin32
 import pdfkit
 import os
 from datetime import datetime, timedelta
-
+from cnvt_attachment_to_pdf import process_attachment
 
 # Directory to save PDFs
 # save_dir = "C:/SavedEmails/"
@@ -100,9 +100,10 @@ def process_inbox():
 
             # Save attachments
             for attachment in message.Attachments:
-                file_path = os.path.join(save_dir, attachment.FileName)
-                attachment.SaveAsFile(file_path)
-                print(f"Saved attachment: {file_path}")
+                # file_path = os.path.join(save_dir, attachment.FileName)
+                # attachment.SaveAsFile(file_path)
+                # print(f"Saved attachment: {file_path}")
+                process_attachment(attachment, save_dir)
 
             message.UnRead = False  # Mark as read after processing
             count += 1
