@@ -131,3 +131,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# m4a files
+*.m4a
+openai-whisper/New Recording 3.m4a
+openai-whisper/transcription_3.txt
+openai-whisper/transcription_1.txt
+openai-whisper/transcription_2.txt
