@@ -19,3 +19,16 @@ try:
 except TypeError :
     print("does not support memoryview.")
 
+
+import base64
+
+# Original data (byte format)
+data = b"Real Python"
+
+# Encoding to Base64
+encoded_data = base64.b64encode(data)
+print(encoded_data)  # Output: b'UmVhbCBQeXRob24='
+
+# Decoding back to original
+decoded_data = base64.b64decode(encoded_data)
+print(decoded_data)  # Output: b'Real Python'
